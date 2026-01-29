@@ -6,7 +6,6 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Opens mailto as fallback — can be replaced with API endpoint later
     const subject = encodeURIComponent(`Kingdom LAB Inquiry from ${formData.name}`);
     const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`);
     window.open(`mailto:sarah@modernmustardseed.com?subject=${subject}&body=${body}`, '_self');
@@ -15,30 +14,30 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="w-full max-w-4xl mx-auto px-6 py-24 md:py-32">
+    <section id="contact" className="w-full max-w-4xl mx-auto px-6 py-28 md:py-36">
       {/* Divider */}
-      <div className="flex justify-center mb-16">
-        <div className="w-px h-20 bg-gradient-to-b from-transparent via-amber-500/30 to-transparent" />
+      <div className="flex justify-center mb-20">
+        <div className="w-px h-24 bg-gradient-to-b from-transparent via-amber-500/30 to-transparent" />
       </div>
 
-      <div className="bg-neutral-950/60 backdrop-blur-md border border-white/[0.06] rounded-2xl p-8 md:p-14">
-        <div className="text-center mb-12">
-          <span className="text-[10px] uppercase tracking-[0.4em] text-amber-500 font-bold mb-4 block">
+      <div className="bg-neutral-950/50 backdrop-blur-md border border-white/[0.04] rounded-2xl p-10 md:p-16">
+        <div className="text-center mb-14">
+          <span className="text-[10px] uppercase tracking-[0.4em] text-amber-500 font-mono font-bold mb-6 block">
             Initiate Collaboration
           </span>
-          <h2 className="font-serif italic text-2xl md:text-4xl text-white leading-tight mb-4">
-            Let's bring your ideas to life
+          <h2 className="font-serif italic text-3xl md:text-5xl text-white leading-tight mb-5">
+            Let's build something<br className="hidden md:block" /> that matters
           </h2>
-          <p className="text-neutral-400 text-sm md:text-base font-light max-w-lg mx-auto">
-            Whether you need an AI product built, a platform designed, or a business automated —
-            I'd love to work with you to <span className="text-amber-200">10x your vision</span>.
+          <p className="text-neutral-400 text-sm md:text-base font-light max-w-lg mx-auto leading-relaxed">
+            Whether it's an AI product, a platform, or a vision that needs engineering —
+            the best things get built when the right people connect.
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6 max-w-xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div>
-              <label className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-medium mb-2 block">
+              <label className="text-[9px] uppercase tracking-[0.25em] text-white/30 font-mono font-bold mb-2.5 block">
                 Name
               </label>
               <input
@@ -46,12 +45,12 @@ const Contact: React.FC = () => {
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full bg-neutral-900/80 border border-white/[0.08] rounded-lg px-4 py-3 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-amber-500/40 transition-colors"
+                className="w-full bg-white/[0.03] border border-white/[0.06] rounded-lg px-4 py-3.5 text-white text-sm font-light placeholder:text-white/15 focus:outline-none focus:border-amber-500/30 focus:bg-white/[0.04] transition-all"
                 placeholder="Your name"
               />
             </div>
             <div>
-              <label className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-medium mb-2 block">
+              <label className="text-[9px] uppercase tracking-[0.25em] text-white/30 font-mono font-bold mb-2.5 block">
                 Email
               </label>
               <input
@@ -59,14 +58,14 @@ const Contact: React.FC = () => {
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full bg-neutral-900/80 border border-white/[0.08] rounded-lg px-4 py-3 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-amber-500/40 transition-colors"
+                className="w-full bg-white/[0.03] border border-white/[0.06] rounded-lg px-4 py-3.5 text-white text-sm font-light placeholder:text-white/15 focus:outline-none focus:border-amber-500/30 focus:bg-white/[0.04] transition-all"
                 placeholder="you@example.com"
               />
             </div>
           </div>
 
           <div>
-            <label className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-medium mb-2 block">
+            <label className="text-[9px] uppercase tracking-[0.25em] text-white/30 font-mono font-bold mb-2.5 block">
               Message
             </label>
             <textarea
@@ -74,19 +73,19 @@ const Contact: React.FC = () => {
               rows={5}
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className="w-full bg-neutral-900/80 border border-white/[0.08] rounded-lg px-4 py-3 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-amber-500/40 transition-colors resize-none"
-              placeholder="Tell me about your project..."
+              className="w-full bg-white/[0.03] border border-white/[0.06] rounded-lg px-4 py-3.5 text-white text-sm font-light placeholder:text-white/15 focus:outline-none focus:border-amber-500/30 focus:bg-white/[0.04] transition-all resize-none"
+              placeholder="Tell me about what you're building..."
             />
           </div>
 
-          <div className="flex justify-center pt-2">
+          <div className="flex justify-center pt-4">
             <button
               type="submit"
               disabled={submitted}
-              className={`group inline-flex items-center gap-3 px-10 py-4 border rounded-full transition-all duration-500 tracking-[0.2em] uppercase text-[10px] font-bold ${
+              className={`group inline-flex items-center gap-3 px-10 py-4 border rounded-full transition-all duration-500 tracking-[0.2em] uppercase text-[10px] font-sans font-bold ${
                 submitted
-                  ? 'border-green-500/50 bg-green-950/40 text-green-400'
-                  : 'border-white/15 hover:border-amber-500/50 bg-neutral-950/80 hover:bg-amber-950/30 text-white hover:shadow-[0_0_30px_rgba(251,191,36,0.08)]'
+                  ? 'border-green-500/40 bg-green-950/30 text-green-400'
+                  : 'border-white/10 hover:border-amber-500/40 bg-transparent hover:bg-amber-950/20 text-white/70 hover:text-white hover:shadow-[0_0_40px_rgba(251,191,36,0.06)]'
               }`}
             >
               <span>{submitted ? 'Opening email client...' : 'Send Message'}</span>
@@ -99,12 +98,11 @@ const Contact: React.FC = () => {
           </div>
         </form>
 
-        {/* Direct email fallback */}
-        <div className="text-center mt-8 pt-6 border-t border-white/[0.04]">
-          <p className="text-white/30 text-xs mb-2">Or reach out directly</p>
+        <div className="text-center mt-10 pt-8 border-t border-white/[0.03]">
+          <p className="text-white/20 text-[10px] font-mono tracking-wider mb-2">Or reach out directly</p>
           <a
             href="mailto:sarah@modernmustardseed.com"
-            className="text-amber-500/70 hover:text-amber-400 text-sm transition-colors font-light"
+            className="text-amber-500/50 hover:text-amber-400 text-sm transition-colors font-serif italic"
           >
             sarah@modernmustardseed.com
           </a>

@@ -19,7 +19,7 @@ const GoldStardust: React.FC = () => {
 
     const sketch = (p: p5) => {
       const NUM_PARTICLES = 500;
-      const NUM_BACKGROUND_STARS = 150;
+      const NUM_BACKGROUND_STARS = 200;
 
       let zOff = 0;
       const mouseInfluence = { x: 0, y: 0, active: false };
@@ -49,10 +49,10 @@ const GoldStardust: React.FC = () => {
         constructor() {
           this.x = p.random(p.width);
           this.y = p.random(p.height);
-          this.size = p.random(0.5, 1.5);
-          this.twinkleSpeed = p.random(0.5, 2);
+          this.size = p.random(0.5, 2.0);
+          this.twinkleSpeed = p.random(0.5, 2.5);
           this.twinkleOffset = p.random(1000);
-          this.baseAlpha = p.random(20, 50);
+          this.baseAlpha = p.random(20, 60);
           this.hue = p.random() > 0.8 ? p.random(40, 55) : p.random(40, 50);
           this.sat = p.random() > 0.8 ? p.random(10, 30) : p.random(0, 10);
         }
@@ -80,48 +80,126 @@ const GoldStardust: React.FC = () => {
         life: number;
         length: number;
         thickness: number;
+        sparkleChance: number;
+        colorShift: number;
 
         constructor() {
-          if (p.random() > 0.5) {
+          // Spawn from multiple directions for variety
+          const spawnSide = p.random();
+          if (spawnSide < 0.4) {
+            // Top edge
             this.pos = p.createVector(p.random(p.width), -20);
+          } else if (spawnSide < 0.7) {
+            // Left edge
+            this.pos = p.createVector(-20, p.random(p.height * 0.5));
+          } else if (spawnSide < 0.85) {
+            // Right edge (going left-downward)
+            this.pos = p.createVector(p.width + 20, p.random(p.height * 0.3));
           } else {
-            this.pos = p.createVector(-20, p.random(p.height * 0.6));
+            // Top-right corner burst
+            this.pos = p.createVector(p.random(p.width * 0.5, p.width), -20);
           }
+
           this.life = 1.0;
-          this.length = p.random(50, 150);
-          this.thickness = p.random(1.5, 3);
-          const angle = p.PI / 4 + p.random(-0.2, 0.2);
-          const speed = p.random(20, 35);
+
+          // More variety in size — some are long dramatic streaks, some are short bursts
+          const sizeClass = p.random();
+          if (sizeClass < 0.3) {
+            // Short burst
+            this.length = p.random(30, 60);
+            this.thickness = p.random(1, 2);
+          } else if (sizeClass < 0.7) {
+            // Medium streak
+            this.length = p.random(80, 160);
+            this.thickness = p.random(1.5, 3);
+          } else {
+            // Long dramatic tail
+            this.length = p.random(180, 300);
+            this.thickness = p.random(2.5, 4.5);
+          }
+
+          // Angle varies based on spawn side
+          let angle: number;
+          if (spawnSide >= 0.7 && spawnSide < 0.85) {
+            // Right-edge: streak left-downward
+            angle = p.PI * 0.75 + p.random(-0.2, 0.2);
+          } else {
+            // Default: streak right-downward
+            angle = p.PI / 4 + p.random(-0.3, 0.3);
+          }
+
+          const speed = p.random(15, 40);
           this.vel = p5.Vector.fromAngle(angle).mult(speed);
+
+          this.sparkleChance = p.random(0.15, 0.45);
+          this.colorShift = p.random(-8, 8);
         }
 
         update() {
           this.pos.add(this.vel);
-          this.life -= 0.02;
+          this.life -= p.random(0.012, 0.025);
         }
 
         display() {
           if (this.life <= 0) return;
+
           const tailVector = this.vel.copy().normalize().mult(-1);
-          const steps = 20;
+          const steps = 30;
+
+          // Outer glow trail
           for (let i = 0; i < steps; i++) {
             const t = i / steps;
             const pos = p5.Vector.add(this.pos, p5.Vector.mult(tailVector, i * (this.length / steps)));
-            const alpha = this.life * (1 - t) * 60;
-            const size = this.thickness * (1 - t * 0.8);
-            p.fill(45, 20, 100, alpha);
+            const alpha = this.life * (1 - t) * 45;
+            const size = this.thickness * (1 - t * 0.7) * 2.5;
+            p.fill(45 + this.colorShift, 15, 100, alpha * 0.3);
             p.ellipse(pos.x, pos.y, size, size);
           }
-          p.fill(50, 5, 100, this.life * 90);
-          p.ellipse(this.pos.x, this.pos.y, this.thickness + 1, this.thickness + 1);
-          if (p.random() < 0.2) {
-            p.fill(40, 0, 100, this.life * 80);
-            p.ellipse(this.pos.x, this.pos.y, this.thickness * 4, this.thickness * 4);
+
+          // Core trail
+          for (let i = 0; i < steps; i++) {
+            const t = i / steps;
+            const pos = p5.Vector.add(this.pos, p5.Vector.mult(tailVector, i * (this.length / steps)));
+            const alpha = this.life * (1 - t) * 70;
+            const size = this.thickness * (1 - t * 0.85);
+            p.fill(45 + this.colorShift, 20, 100, alpha);
+            p.ellipse(pos.x, pos.y, size, size);
+          }
+
+          // Bright head with warm glow
+          p.fill(50 + this.colorShift, 5, 100, this.life * 95);
+          p.ellipse(this.pos.x, this.pos.y, this.thickness + 2, this.thickness + 2);
+
+          // Head bloom
+          p.fill(45 + this.colorShift, 10, 100, this.life * 40);
+          p.ellipse(this.pos.x, this.pos.y, this.thickness * 5, this.thickness * 5);
+
+          // Sparkle particles shed from the tail
+          if (p.random() < this.sparkleChance) {
+            const sparklePos = p5.Vector.add(
+              this.pos,
+              p5.Vector.mult(tailVector, p.random(0, this.length * 0.4))
+            );
+            const sparkleOffset = p.random(-4, 4);
+            p.fill(40 + this.colorShift, 5, 100, this.life * p.random(40, 90));
+            p.ellipse(
+              sparklePos.x + sparkleOffset,
+              sparklePos.y + sparkleOffset,
+              p.random(1, 3),
+              p.random(1, 3)
+            );
+          }
+
+          // Occasional flash burst at head
+          if (p.random() < 0.08) {
+            p.fill(50, 0, 100, this.life * 60);
+            const burstSize = this.thickness * p.random(6, 10);
+            p.ellipse(this.pos.x, this.pos.y, burstSize, burstSize);
           }
         }
 
         isDead() {
-          return this.life <= 0 || this.pos.x > p.width + 100 || this.pos.y > p.height + 100;
+          return this.life <= 0 || this.pos.x > p.width + 200 || this.pos.y > p.height + 200 || this.pos.x < -200;
         }
       }
 
@@ -234,7 +312,6 @@ const GoldStardust: React.FC = () => {
           const brightness = p.lerp(col.b * 0.6, col.b, twinkle);
           const alphaBoost = p.lerp(0.7, 1.3, twinkle);
 
-          // Trail
           for (let i = 0; i < this.trail.length; i++) {
             const t = i / this.trail.length;
             const point = this.trail[i];
@@ -244,7 +321,6 @@ const GoldStardust: React.FC = () => {
             p.ellipse(point.x, point.y, trailSize * 2, trailSize * 2);
           }
 
-          // Glows
           const glowSize3 = this.size * 6 * this.glowStrength;
           p.fill(col.h, col.s * 0.6, brightness, 4 * alphaBoost * this.depth);
           p.ellipse(this.pos.x, this.pos.y, glowSize3, glowSize3);
@@ -257,11 +333,9 @@ const GoldStardust: React.FC = () => {
           p.fill(col.h, col.s * 0.8, brightness, 25 * alphaBoost);
           p.ellipse(this.pos.x, this.pos.y, glowSize1, glowSize1);
 
-          // Core
           p.fill(col.h, col.s * 0.5, Math.min(100, brightness * 1.1), 70 * alphaBoost);
           p.ellipse(this.pos.x, this.pos.y, this.size, this.size);
 
-          // Hot center
           p.fill(col.h - 5, col.s * 0.3, 100, 50 * alphaBoost * twinkle);
           p.ellipse(this.pos.x, this.pos.y, this.size * 0.4, this.size * 0.4);
         }
@@ -307,7 +381,16 @@ const GoldStardust: React.FC = () => {
         particles.sort((a, b) => a.depth - b.depth);
         for (const part of particles) { part.update(); part.display(); }
 
-        if (p.random() < 0.005) shootingStars.push(new ShootingStar());
+        // 6x more frequent shooting stars + occasional bursts
+        if (p.random() < 0.03) shootingStars.push(new ShootingStar());
+        // Rare dramatic burst: 3-5 stars at once
+        if (p.random() < 0.003) {
+          const burstCount = p.floor(p.random(3, 6));
+          for (let b = 0; b < burstCount; b++) {
+            shootingStars.push(new ShootingStar());
+          }
+        }
+
         for (let i = shootingStars.length - 1; i >= 0; i--) {
           const ss = shootingStars[i];
           ss.update();

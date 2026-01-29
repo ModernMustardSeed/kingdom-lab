@@ -9,7 +9,7 @@
   }
 
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 5px;
   }
 
   ::-webkit-scrollbar-track {
@@ -17,20 +17,55 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: rgba(245, 166, 35, 0.2);
+    background: rgba(245, 166, 35, 0.15);
     border-radius: 3px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(245, 166, 35, 0.4);
+    background: rgba(245, 166, 35, 0.3);
   }
 }
 
 @layer utilities {
   .text-gradient-gold {
-    background: linear-gradient(135deg, #F5A623 0%, #FFD966 50%, #F5A623 100%);
+    background: linear-gradient(135deg, #D4901A 0%, #FFD966 40%, #F5A623 70%, #FFE699 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .text-gradient-gold-subtle {
+    background: linear-gradient(135deg, #F5A623 0%, #FFE699 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .magazine-spread {
+    perspective: 1200px;
+  }
+
+  .page-card {
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+  }
+
+  .page-card-enter {
+    animation: slideInPage 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes slideInPage {
+    from {
+      opacity: 0;
+      transform: translateX(60px) rotateY(-8deg);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0) rotateY(0deg);
+    }
+  }
+
+  .skill-pill {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[9px] uppercase tracking-[0.15em] font-mono font-bold border transition-all duration-300;
   }
 }

@@ -7,9 +7,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Inter"', 'system-ui', 'sans-serif'],
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
-        mono: ['"JetBrains Mono"', 'monospace'],
+        sans: ['"Syne"', 'system-ui', 'sans-serif'],
+        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        mono: ['"Space Mono"', 'monospace'],
       },
       colors: {
         gold: {
@@ -28,7 +28,9 @@ export default {
       animation: {
         'fade-in': 'fadeIn 1s ease-out forwards',
         'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+        'fade-in-up-delay': 'fadeInUp 0.8s ease-out 0.2s forwards',
         'pulse-slow': 'pulse 4s ease-in-out infinite',
+        'page-flip': 'pageFlip 0.6s ease-in-out',
       },
       keyframes: {
         fadeIn: {
@@ -36,8 +38,14 @@ export default {
           '100%': { opacity: '1' },
         },
         fadeInUp: {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        pageFlip: {
+          '0%': { transform: 'rotateY(0deg)', opacity: '1' },
+          '50%': { transform: 'rotateY(-90deg)', opacity: '0' },
+          '51%': { transform: 'rotateY(90deg)', opacity: '0' },
+          '100%': { transform: 'rotateY(0deg)', opacity: '1' },
         },
       },
     },

@@ -1,60 +1,135 @@
+const disciplines = [
+  { name: 'AI Engineering', detail: 'LLMs, Agents, NLP, Computer Vision' },
+  { name: 'Full-Stack Architecture', detail: 'React, Next.js, Node, Databases' },
+  { name: 'Generative & Creative Tech', detail: 'WebGL, p5.js, Three.js, Shaders' },
+  { name: 'Product Design', detail: 'UX Strategy, Systems Design, Branding' },
+  { name: 'Business Automation', detail: 'CRM, Pipelines, Workflow Orchestration' },
+  { name: 'Voice & Conversational AI', detail: 'Telephony, NLU, Real-Time Processing' },
+];
+
 const About: React.FC = () => {
   return (
-    <section id="about" className="w-full max-w-5xl mx-auto px-6 py-24 md:py-32">
+    <section id="about" className="w-full max-w-6xl mx-auto px-6 py-28 md:py-40">
       {/* Divider */}
-      <div className="flex justify-center mb-16">
-        <div className="w-px h-20 bg-gradient-to-b from-transparent via-amber-500/30 to-transparent" />
+      <div className="flex justify-center mb-20">
+        <div className="w-px h-24 bg-gradient-to-b from-transparent via-amber-500/30 to-transparent" />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
-        {/* Left — Label + Title */}
-        <div>
-          <span className="text-[10px] uppercase tracking-[0.4em] text-amber-500 font-bold mb-6 block">
-            The Builder
-          </span>
-          <h2 className="font-serif italic text-3xl md:text-5xl text-white leading-tight mb-6">
-            Building the future,{' '}
-            <span className="text-gradient-gold">one seed</span> at a time.
-          </h2>
-          <div className="w-12 h-px bg-amber-500/30 mb-8" />
+      {/* Opening Statement — Full Width, Cinematic */}
+      <div className="text-center max-w-4xl mx-auto mb-24 md:mb-32">
+        <span className="text-[10px] uppercase tracking-[0.5em] text-amber-500 font-mono font-bold mb-8 block">
+          The Builder Behind the Lab
+        </span>
+        <h2 className="font-serif italic text-4xl md:text-6xl lg:text-7xl text-white leading-[1.15] mb-10">
+          I don't just build products.{' '}
+          <br className="hidden md:block" />
+          I build <span className="text-gradient-gold">what God puts on my heart</span> — and I ship it.
+        </h2>
+        <div className="w-16 h-px bg-gradient-to-r from-transparent via-amber-500/40 to-transparent mx-auto" />
+      </div>
+
+      {/* Two-Column Story */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 mb-28 md:mb-36">
+        {/* Left Column — The Story */}
+        <div className="lg:col-span-7 space-y-8">
+          <p className="text-neutral-200 text-lg md:text-xl leading-9 font-serif font-light">
+            I'm Sarah — founder of <span className="text-white font-medium">Modern Mustard Seed</span>.
+            I build AI-powered products, immersive digital experiences, and business systems
+            that move at the speed of faith. Every project in this lab started the same way:
+            with a conviction, a blank screen, and the discipline to see it through to deployment.
+          </p>
+
+          <p className="text-neutral-400 text-base md:text-lg leading-8 font-light">
+            I come from the intersection of deep technical execution and creative vision. I architect
+            full-stack platforms from zero, engineer AI systems that think and act autonomously,
+            and design experiences that stop people mid-scroll. From enterprise voice AI handling
+            real phone calls to generative art that responds to human presence — the range is the resume.
+          </p>
+
+          <p className="text-neutral-400 text-base md:text-lg leading-8 font-light">
+            What sets this work apart isn't just the technology. It's the <em className="text-amber-200/80 not-italic font-medium">why</em>.
+            Every line of code is an act of stewardship. Every shipped product is a seed planted.
+            I believe the same God who created the universe also created innovation — and I'm here to
+            build at that standard. Not for accolades, but for impact that outlasts the algorithm.
+          </p>
+
+          <div className="pt-6">
+            <blockquote className="border-l-2 border-amber-500/30 pl-6">
+              <p className="text-amber-200/70 font-serif italic text-lg md:text-xl leading-relaxed">
+                "Whatever you do, work at it with all your heart, as working for the Lord."
+              </p>
+              <cite className="text-[10px] uppercase tracking-[0.3em] text-amber-500/50 font-mono font-bold mt-3 block not-italic">
+                Colossians 3:23
+              </cite>
+            </blockquote>
+          </div>
         </div>
 
-        {/* Right — Bio */}
-        <div className="space-y-6">
-          <p className="text-neutral-300 text-base md:text-lg leading-8 font-light">
-            I'm Sarah — founder of <span className="text-white font-medium">Modern Mustard Seed</span>,
-            an AI-powered innovation studio where faith meets cutting-edge technology. I build
-            products that transform how creators work, businesses grow, and people connect with purpose.
-          </p>
-          <p className="text-neutral-400 text-sm md:text-base leading-7 font-light">
-            From enterprise voice AI to immersive generative art, every project in this lab is
-            designed to 10x what's possible. I specialize in taking ideas from zero to deployed —
-            blending AI, elegant design, and relentless execution.
-          </p>
-          <p className="text-neutral-400 text-sm md:text-base leading-7 font-light">
-            My mission is simple: use the gifts I've been given to build Kingdom-level impact,
-            one line of code at a time.
-          </p>
+        {/* Right Column — Disciplines & Signal */}
+        <div className="lg:col-span-5">
+          <div className="sticky top-32">
+            <span className="text-[9px] uppercase tracking-[0.4em] text-white/20 font-mono font-bold mb-6 block">
+              Core Disciplines
+            </span>
+
+            <div className="space-y-0">
+              {disciplines.map((d, i) => (
+                <div
+                  key={d.name}
+                  className="group py-5 border-b border-white/[0.04] hover:border-amber-500/20 transition-colors duration-300"
+                >
+                  <div className="flex items-baseline justify-between">
+                    <h4 className="text-white/80 group-hover:text-white text-sm md:text-base font-sans font-semibold tracking-wide transition-colors">
+                      {d.name}
+                    </h4>
+                    <span className="text-[9px] text-white/15 font-mono">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                  </div>
+                  <p className="text-[11px] text-white/25 group-hover:text-amber-400/50 mt-1.5 font-mono tracking-wide transition-colors">
+                    {d.detail}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Signal */}
+            <div className="mt-10 p-6 rounded-xl border border-white/[0.04] bg-neutral-950/40">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                <span className="text-[9px] uppercase tracking-[0.3em] text-white/30 font-mono font-bold">
+                  Currently Available
+                </span>
+              </div>
+              <p className="text-white/40 text-xs leading-5 font-light">
+                Open to ventures, partnerships, and projects that align with the mission.
+                If you're building something meaningful — let's talk.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Stats Row */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 md:mt-28">
+      {/* Stats Strip */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/[0.03] rounded-2xl overflow-hidden">
         {[
-          { value: '14+', label: 'Projects Shipped' },
-          { value: 'AI', label: 'First Approach' },
-          { value: '10x', label: 'Business Impact' },
-          { value: 'Faith', label: 'Driven Purpose' },
+          { value: '14+', label: 'Products Shipped', sublabel: 'Zero to deployed' },
+          { value: 'AI-First', label: 'Engineering', sublabel: 'Every project' },
+          { value: 'Full Stack', label: 'Execution', sublabel: 'Design to deploy' },
+          { value: 'Kingdom', label: 'Driven', sublabel: 'Faith as foundation' },
         ].map((stat) => (
           <div
             key={stat.label}
-            className="text-center p-6 rounded-xl border border-white/[0.04] bg-neutral-950/50 backdrop-blur-sm"
+            className="text-center p-8 md:p-10 bg-neutral-950/60 backdrop-blur-sm"
           >
-            <div className="text-2xl md:text-3xl font-serif italic text-amber-400 mb-2">
+            <div className="text-2xl md:text-3xl font-sans font-extrabold text-gradient-gold mb-2">
               {stat.value}
             </div>
-            <div className="text-[10px] uppercase tracking-[0.25em] text-white/40 font-medium">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-white/50 font-sans font-semibold mb-1">
               {stat.label}
+            </div>
+            <div className="text-[9px] text-white/20 font-mono tracking-wider">
+              {stat.sublabel}
             </div>
           </div>
         ))}

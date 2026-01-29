@@ -48,19 +48,19 @@ const socialLinks = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="w-full max-w-5xl mx-auto px-6 pt-16 pb-12">
+    <footer className="w-full max-w-5xl mx-auto px-6 pt-20 pb-12">
       {/* Scripture */}
       <div className="text-center mb-16 max-w-2xl mx-auto">
-        <p className="text-neutral-200 font-serif italic text-xl md:text-2xl mb-4 leading-relaxed">
+        <p className="text-neutral-200 font-serif italic text-xl md:text-3xl mb-5 leading-relaxed">
           "Commit to the Lord whatever you do, and he will establish your plans."
         </p>
-        <span className="text-xs text-amber-500 uppercase tracking-[0.3em] font-bold">
+        <span className="text-[10px] text-amber-500 uppercase tracking-[0.4em] font-mono font-bold">
           Proverbs 16:3
         </span>
       </div>
 
       {/* Social Links */}
-      <div className="flex justify-center gap-4 mb-12">
+      <div className="flex justify-center gap-3 mb-14">
         {socialLinks.map((social) => (
           <a
             key={social.name}
@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={social.name}
-            className="w-10 h-10 rounded-full border border-white/[0.08] bg-neutral-950/60 flex items-center justify-center text-white/30 hover:text-amber-400 hover:border-amber-500/40 transition-all duration-300"
+            className="w-10 h-10 rounded-full border border-white/[0.05] bg-white/[0.02] flex items-center justify-center text-white/20 hover:text-amber-400 hover:border-amber-500/30 hover:bg-amber-500/[0.05] transition-all duration-300"
           >
             {social.icon}
           </a>
@@ -76,17 +76,18 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Bottom */}
-      <div className="w-12 h-px bg-white/10 mx-auto mb-6" />
-      <p className="text-center font-light text-[10px] tracking-[0.3em] uppercase text-white/40">
-        Powered by{' '}
+      <div className="w-16 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent mx-auto mb-6" />
+      <p className="text-center font-mono text-[9px] tracking-[0.3em] uppercase text-white/25">
+        Built by{' '}
         <a
           href="https://modernmustardseed.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-amber-400 transition-colors border-b border-white/10 hover:border-amber-400 pb-px"
+          className="hover:text-amber-400 transition-colors text-white/35"
         >
           Modern Mustard Seed
         </a>
+        {' '}&middot; Kingdom LAB
       </p>
     </footer>
   );
