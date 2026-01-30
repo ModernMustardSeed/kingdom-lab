@@ -20,7 +20,7 @@ const projects: Project[] = [
     description: "Enterprise-grade AI voice assistants engineered for staffing and customer engagement. Scaling human connection through conversational AI that listens, learns, and responds with precision.",
     skills: ["Natural Language Processing", "Voice Synthesis", "Conversational AI", "Real-Time Processing", "Telephony APIs"],
     tags: ["Voice AI", "Staffing", "Automation"],
-    link: "https://voicestaff.pro/",
+    link: "",
     category: "AI Products",
     featured: true,
   },
@@ -31,7 +31,7 @@ const projects: Project[] = [
     description: "An ethereal network visualization system. Data flows through a mesmerizing, interactive aurora borealis simulation — revealing hidden connections in real time.",
     skills: ["WebGL", "Shader Programming", "Network Graphs", "Real-Time Rendering", "Interactive Animation"],
     tags: ["Data Visualization", "WebGL", "Interactive System"],
-    link: "https://copy-of-aurora-nexus-1086061899824.us-west1.run.app",
+    link: "",
     category: "Creative Tech",
   },
   {
@@ -41,7 +41,7 @@ const projects: Project[] = [
     description: "An immersive 3D exploration of the iconic World 1-1. Reimagining classic level design through modern spatial computing and interactive 3D environments.",
     skills: ["Three.js", "3D Modeling", "Spatial Computing", "Physics Simulation", "Level Design"],
     tags: ["3D Environment", "Interactive", "Game Design"],
-    link: "https://world-1-1-1086061899824.us-west1.run.app",
+    link: "",
     category: "Creative Tech",
   },
   {
@@ -51,7 +51,7 @@ const projects: Project[] = [
     description: "A comprehensive platform architecture engineered for maximum operational freedom. Unifying complex business processes into a seamless, high-performance ecosystem built to scale.",
     skills: ["System Architecture", "Microservices", "API Design", "Database Design", "DevOps"],
     tags: ["Platform Architecture", "Ecosystem", "High Performance"],
-    link: "https://go-max-freedom-ecosystem-1086061899824.us-west1.run.app",
+    link: "",
     category: "Business Tools",
   },
   {
@@ -61,7 +61,7 @@ const projects: Project[] = [
     description: "An immersive generative simulation of oceanic currents. High-performance particle flow fields visualize the mathematics of fluid dynamics in real time.",
     skills: ["Generative Algorithms", "Particle Systems", "Flow Field Math", "Canvas API", "Performance Optimization"],
     tags: ["Generative Art", "Flow Field", "Interactive Physics"],
-    link: "https://ocean-flow-field-1086061899824.us-west1.run.app",
+    link: "",
     category: "Creative Tech",
   },
   {
@@ -71,7 +71,7 @@ const projects: Project[] = [
     description: "High-performance virtual staging and interior design powered by generative AI. Transform empty spaces into furnished masterpieces in seconds, not weeks.",
     skills: ["Generative AI", "Image Processing", "Prompt Engineering", "Computer Vision", "UX Design"],
     tags: ["Generative AI", "Interior Design", "Virtual Staging"],
-    link: "https://luxe-design-1086061899824.us-west1.run.app",
+    link: "",
     category: "AI Products",
   },
   {
@@ -81,7 +81,7 @@ const projects: Project[] = [
     description: "A daily devotional application designed to nurture spiritual growth. Curated inspiration delivered through a serene, modern interface that meets you where you are.",
     skills: ["Content Systems", "Push Notifications", "Mobile-First Design", "Personalization AI", "Scripture APIs"],
     tags: ["Faith Tech", "Daily Inspiration", "Mobile App"],
-    link: "https://the-daily-seed-1086061899824.us-west1.run.app",
+    link: "",
     category: "Faith Tech",
   },
   {
@@ -91,7 +91,7 @@ const projects: Project[] = [
     description: "A precision temporal interface for exploring historical timelines. Navigate through eras with fluid, interactive chronological visualization that makes history tangible.",
     skills: ["Data Visualization", "Timeline Algorithms", "Interactive UI", "Historical Data APIs", "D3.js"],
     tags: ["Temporal Visualization", "EdTech", "Interactive Timeline"],
-    link: "https://chrono-navigator-1086061899824.us-west1.run.app",
+    link: "",
     category: "Creative Tech",
   },
   {
@@ -101,7 +101,7 @@ const projects: Project[] = [
     description: "High-performance lead generation engine for identifying ideal customer profiles and generating qualified business leads through AI-powered intelligence gathering.",
     skills: ["Machine Learning", "Data Scraping", "Lead Scoring", "Dashboard Design", "CRM Integration"],
     tags: ["Lead Generation", "Dashboard", "B2B Intelligence"],
-    link: "https://opus-leadgen-engine-1086061899824.us-west1.run.app",
+    link: "",
     category: "Business Tools",
   },
   {
@@ -111,7 +111,7 @@ const projects: Project[] = [
     description: "A professional AI styling atelier and wardrobe curator powered by Gemini. Inspired by the iconic closet of Cher Horowitz — reimagined for the AI era.",
     skills: ["Gemini API", "Fashion Classification", "Image Generation", "Style Matching", "Recommendation Engine"],
     tags: ["AI Styling", "Fashion Tech", "Gemini"],
-    link: "https://as-if-ai-1086061899824.us-west1.run.app",
+    link: "",
     category: "AI Products",
   },
   {
@@ -121,7 +121,7 @@ const projects: Project[] = [
     description: "An Agentic CRM and Sales System designed for automated pipeline management. AI agents handle customer interactions, follow-ups, and deal progression autonomously.",
     skills: ["Agentic AI", "Pipeline Automation", "Multi-Agent Systems", "Sales Analytics", "Workflow Orchestration"],
     tags: ["Agentic AI", "CRM", "Sales Automation"],
-    link: "https://the-ledger-agentic-crm-1086061899824.us-west1.run.app/",
+    link: "",
     category: "Business Tools",
   },
   {
@@ -131,7 +131,7 @@ const projects: Project[] = [
     description: "An immersive digital art experience. Fluid, ethereal ribbon forms dance through space — responding to your presence with beauty that feels alive.",
     skills: ["WebGL Shaders", "GPU Computing", "Procedural Animation", "Creative Coding", "Interaction Design"],
     tags: ["Generative Art", "WebGL", "Interactive Design"],
-    link: "https://dreamscape-ribbons-1086061899824.us-west1.run.app",
+    link: "",
     category: "Creative Tech",
   },
   {
@@ -141,7 +141,7 @@ const projects: Project[] = [
     description: "A dynamic intelligence system visualizing complex data streams through an immersive, high-performance interface. Where raw data becomes strategic insight.",
     skills: ["Real-Time Analytics", "Stream Processing", "Data Pipelines", "AI Inference", "Dashboard Architecture"],
     tags: ["Data Visualization", "AI Core", "Real-time Analytics"],
-    link: "https://vortex-ai-1086061899824.us-west1.run.app",
+    link: "",
     category: "AI Products",
   },
   {
@@ -151,12 +151,110 @@ const projects: Project[] = [
     description: "A gamified exploration of professional works. Navigate a digital labyrinth to uncover milestones — turning the portfolio experience into an interactive adventure.",
     skills: ["Game Development", "Pathfinding Algorithms", "Sprite Animation", "State Machines", "Level Design"],
     tags: ["Interactive Experience", "Gamification", "Web Design"],
-    link: "https://pac-sarah-portfolio-maze-1086061899824.us-west1.run.app",
+    link: "",
     category: "Creative Tech",
   },
 ];
 
 const categories = ['All', 'AI Products', 'Business Tools', 'Creative Tech', 'Faith Tech'];
+
+const ProjectCard: React.FC<{ project: Project; className?: string }> = ({ project, className = '' }) => {
+  const isLive = project.link !== '';
+
+  const Wrapper = isLive ? 'a' : 'div';
+  const wrapperProps = isLive
+    ? { href: project.link, target: '_blank' as const, rel: 'noopener noreferrer' }
+    : {};
+
+  return (
+    <Wrapper
+      {...wrapperProps}
+      className={`group relative block p-10 md:p-14 transition-all duration-500 hover:bg-white/[0.02] overflow-hidden ${
+        isLive ? 'cursor-pointer' : 'cursor-default'
+      } ${className}`}
+    >
+      {/* Hover ambient glow */}
+      <div className="absolute top-0 right-0 -mr-40 -mt-40 w-96 h-96 rounded-full blur-[100px] bg-amber-500/10 opacity-0 group-hover:opacity-60 transition-opacity duration-1000 pointer-events-none" />
+
+      <div className="relative z-10 flex flex-col h-full min-h-[420px]">
+        {/* Top: Category + Issue marker */}
+        <div className="flex items-center justify-between mb-8">
+          <span className="text-[9px] uppercase tracking-[0.3em] text-amber-500/50 font-mono font-bold">
+            {project.category}
+          </span>
+          <div className="flex items-center gap-3">
+            {!isLive && (
+              <span className="text-[8px] uppercase tracking-[0.2em] text-amber-500/40 font-mono font-bold px-2.5 py-1 rounded-full border border-amber-500/15 bg-amber-500/[0.04]">
+                Coming Soon
+              </span>
+            )}
+            <span className="text-[9px] uppercase tracking-[0.2em] text-white/15 font-mono">
+              No. {String(project.id).padStart(2, '0')}
+            </span>
+          </div>
+        </div>
+
+        {/* Title Block */}
+        <div className="mb-8">
+          <h3 className={`font-serif italic text-4xl md:text-5xl transition-colors duration-500 mb-2 leading-[1.1] ${
+            isLive ? 'text-white group-hover:text-amber-100' : 'text-white/70'
+          }`}>
+            {project.title}
+          </h3>
+          <p className="text-[11px] uppercase tracking-[0.25em] text-white/25 font-sans font-medium mt-3">
+            {project.subtitle}
+          </p>
+        </div>
+
+        {/* Divider */}
+        <div className="w-full h-px bg-gradient-to-r from-amber-500/20 via-white/[0.06] to-transparent mb-8" />
+
+        {/* Description */}
+        <p className="text-neutral-400 text-sm md:text-[15px] leading-7 mb-8 flex-grow font-light">
+          {project.description}
+        </p>
+
+        {/* Skills */}
+        <div className="mb-6">
+          <span className="text-[8px] uppercase tracking-[0.3em] text-white/20 font-mono block mb-3">Technical Stack</span>
+          <div className="flex flex-wrap gap-2">
+            {project.skills.map((skill) => (
+              <span
+                key={skill}
+                className="skill-pill border-amber-500/15 text-amber-400/60 bg-amber-500/[0.04] group-hover:border-amber-500/30 group-hover:text-amber-300/80 group-hover:bg-amber-500/[0.08]"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom */}
+        <div className="flex items-center justify-between pt-6 border-t border-white/[0.04] group-hover:border-white/[0.08] transition-colors">
+          <div className="flex flex-wrap gap-3">
+            {project.tags.map((tag) => (
+              <span key={tag} className="text-[9px] uppercase tracking-[0.15em] text-white/20 group-hover:text-white/35 transition-colors font-medium">
+                {tag}
+              </span>
+            ))}
+          </div>
+          {isLive ? (
+            <span className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-white/20 group-hover:text-amber-400 transition-all duration-500 font-sans font-bold opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0">
+              Explore
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
+              </svg>
+            </span>
+          ) : (
+            <span className="text-[9px] uppercase tracking-[0.2em] text-white/15 font-mono">
+              Deploying
+            </span>
+          )}
+        </div>
+      </div>
+    </Wrapper>
+  );
+};
 
 const Portfolio: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -261,80 +359,11 @@ const Portfolio: React.FC = () => {
           }`}
         >
           {currentProjects.map((project, idx) => (
-            <a
+            <ProjectCard
               key={project.id}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`group relative block p-10 md:p-14 transition-all duration-500 hover:bg-white/[0.02] overflow-hidden ${
-                idx === 0 && currentProjects.length > 1 ? 'lg:border-r border-white/[0.04]' : ''
-              }`}
-            >
-              {/* Hover ambient glow */}
-              <div className="absolute top-0 right-0 -mr-40 -mt-40 w-96 h-96 rounded-full blur-[100px] bg-amber-500/10 opacity-0 group-hover:opacity-60 transition-opacity duration-1000 pointer-events-none" />
-
-              <div className="relative z-10 flex flex-col h-full min-h-[420px]">
-                {/* Top: Category + Issue marker */}
-                <div className="flex items-center justify-between mb-8">
-                  <span className="text-[9px] uppercase tracking-[0.3em] text-amber-500/50 font-mono font-bold">
-                    {project.category}
-                  </span>
-                  <span className="text-[9px] uppercase tracking-[0.2em] text-white/15 font-mono">
-                    No. {String(project.id).padStart(2, '0')}
-                  </span>
-                </div>
-
-                {/* Title Block */}
-                <div className="mb-8">
-                  <h3 className="font-serif italic text-4xl md:text-5xl text-white group-hover:text-amber-100 transition-colors duration-500 mb-2 leading-[1.1]">
-                    {project.title}
-                  </h3>
-                  <p className="text-[11px] uppercase tracking-[0.25em] text-white/25 font-sans font-medium mt-3">
-                    {project.subtitle}
-                  </p>
-                </div>
-
-                {/* Divider */}
-                <div className="w-full h-px bg-gradient-to-r from-amber-500/20 via-white/[0.06] to-transparent mb-8" />
-
-                {/* Description */}
-                <p className="text-neutral-400 text-sm md:text-[15px] leading-7 mb-8 flex-grow font-light">
-                  {project.description}
-                </p>
-
-                {/* Skills */}
-                <div className="mb-6">
-                  <span className="text-[8px] uppercase tracking-[0.3em] text-white/20 font-mono block mb-3">Technical Stack</span>
-                  <div className="flex flex-wrap gap-2">
-                    {project.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="skill-pill border-amber-500/15 text-amber-400/60 bg-amber-500/[0.04] group-hover:border-amber-500/30 group-hover:text-amber-300/80 group-hover:bg-amber-500/[0.08]"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Bottom: Open link */}
-                <div className="flex items-center justify-between pt-6 border-t border-white/[0.04] group-hover:border-white/[0.08] transition-colors">
-                  <div className="flex flex-wrap gap-3">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="text-[9px] uppercase tracking-[0.15em] text-white/20 group-hover:text-white/35 transition-colors font-medium">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <span className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-white/20 group-hover:text-amber-400 transition-all duration-500 font-sans font-bold opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0">
-                    Explore
-                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
-                    </svg>
-                  </span>
-                </div>
-              </div>
-            </a>
+              project={project}
+              className={idx === 0 && currentProjects.length > 1 ? 'lg:border-r border-white/[0.04]' : ''}
+            />
           ))}
         </div>
 
