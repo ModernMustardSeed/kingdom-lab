@@ -18,8 +18,8 @@ const GoldStardust: React.FC = () => {
     if (!containerRef.current) return;
 
     const sketch = (p: p5) => {
-      const NUM_PARTICLES = 500;
-      const NUM_BACKGROUND_STARS = 200;
+      const NUM_PARTICLES = 180;
+      const NUM_BACKGROUND_STARS = 90;
 
       let zOff = 0;
       const mouseInfluence = { x: 0, y: 0, active: false };
@@ -248,7 +248,7 @@ const GoldStardust: React.FC = () => {
           this.speedMult = p.lerp(0.3, 1.2, this.depth);
           this.glowStrength = p.lerp(0.5, 1.5, this.depth);
           this.trail = [];
-          this.maxTrail = p.floor(p.lerp(3, 12, this.depth));
+          this.maxTrail = p.floor(p.lerp(2, 8, this.depth));
         }
 
         selectColorType(): string {
@@ -321,22 +321,18 @@ const GoldStardust: React.FC = () => {
             p.ellipse(point.x, point.y, trailSize * 2, trailSize * 2);
           }
 
-          const glowSize3 = this.size * 6 * this.glowStrength;
-          p.fill(col.h, col.s * 0.6, brightness, 4 * alphaBoost * this.depth);
-          p.ellipse(this.pos.x, this.pos.y, glowSize3, glowSize3);
-
-          const glowSize2 = this.size * 3.5 * this.glowStrength;
-          p.fill(col.h, col.s * 0.7, brightness, 12 * alphaBoost * this.depth);
+          const glowSize2 = this.size * 3 * this.glowStrength;
+          p.fill(col.h, col.s * 0.7, brightness, 8 * alphaBoost * this.depth);
           p.ellipse(this.pos.x, this.pos.y, glowSize2, glowSize2);
 
-          const glowSize1 = this.size * 2;
-          p.fill(col.h, col.s * 0.8, brightness, 25 * alphaBoost);
+          const glowSize1 = this.size * 1.8;
+          p.fill(col.h, col.s * 0.8, brightness, 20 * alphaBoost);
           p.ellipse(this.pos.x, this.pos.y, glowSize1, glowSize1);
 
-          p.fill(col.h, col.s * 0.5, Math.min(100, brightness * 1.1), 70 * alphaBoost);
+          p.fill(col.h, col.s * 0.5, Math.min(100, brightness * 1.1), 65 * alphaBoost);
           p.ellipse(this.pos.x, this.pos.y, this.size, this.size);
 
-          p.fill(col.h - 5, col.s * 0.3, 100, 50 * alphaBoost * twinkle);
+          p.fill(col.h - 5, col.s * 0.3, 100, 45 * alphaBoost * twinkle);
           p.ellipse(this.pos.x, this.pos.y, this.size * 0.4, this.size * 0.4);
         }
       }
