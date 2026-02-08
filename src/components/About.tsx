@@ -54,7 +54,7 @@ const About: React.FC = () => {
           <span className="text-gradient-gold">autonomous agent</span>.
         </h2>
         <p className="text-neutral-400 text-base md:text-lg font-light max-w-2xl mx-auto leading-relaxed">
-          Fullstack engineer. AI systems architect. Founder. 8 live products shipped solo — frontend to backend to agentic intelligence. I don't hand off. I ship.
+          Fullstack engineer. AI systems architect. Founder. 10 live products shipped solo — frontend to backend to agentic intelligence. I don't hand off. I ship.
         </p>
         <div className="w-16 h-px bg-gradient-to-r from-transparent via-amber-500/40 to-transparent mx-auto mt-10" />
       </div>
