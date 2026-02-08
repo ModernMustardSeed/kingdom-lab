@@ -2,33 +2,34 @@ const stack = [
   {
     layer: 'Frontend',
     label: 'Pixel-Perfect Taste',
-    tools: 'React, Next.js 14/15, TypeScript, Tailwind, Framer Motion, p5.js, Three.js, WebGL',
+    tools: 'React, Next.js 14/15, TypeScript, Tailwind, Framer Motion, p5.js, Three.js, WebGL, Cursor',
     description: 'Interfaces that feel alive. The kind of frontend craft where every animation is intentional, every layout breathes, and users don\'t just navigate — they experience.',
   },
   {
     layer: 'Backend',
     label: 'Production Architecture',
-    tools: 'Node.js, Supabase, Prisma, PostgreSQL, REST / tRPC, Stripe, Auth Systems, Edge Functions',
+    tools: 'Node.js, Supabase, Prisma, PostgreSQL, REST / tRPC, Stripe, Auth Systems, Edge Functions, Serverless, Railway',
     description: 'Databases that scale. APIs that don\'t break. Payment systems, auth flows, and real-time infrastructure — engineered for production from day one, not day ninety.',
   },
   {
     layer: 'AI Systems',
     label: 'Intelligence Layer',
-    tools: 'Gemini, GPT-4, Claude, Veo, Imagen, Voice AI, NLP, Computer Vision, RAG Pipelines',
+    tools: 'Gemini, GPT-4, Claude, Veo, Imagen, Voice AI, NLP, Computer Vision, RAG Pipelines, Prompt Engineering',
     description: 'Not just calling APIs — building systems that reason, generate, and adapt. From AI video production to voice agents handling live phone calls to intelligent content engines.',
   },
   {
     layer: 'Agentic',
     label: 'Autonomous Orchestration',
-    tools: 'Multi-Agent Systems, Trigger.dev, Workflow Orchestration, Tool Use, Memory Systems, MCP',
+    tools: 'Multi-Agent Systems, Trigger.dev, Claude Code, MCP Protocol, Tool Use, Memory Systems, Knowledge Graphs, Event-Driven Architecture',
     description: 'The frontier. AI agents that don\'t just respond — they plan, execute, and iterate autonomously. CRM agents that close deals. Creative agents that produce campaigns. Operations that run themselves.',
   },
 ];
 
 const disciplines = [
   { name: 'Full-Stack Product Engineering', detail: 'Concept → Architecture → Ship' },
-  { name: 'AI & LLM Integration', detail: 'Gemini, GPT-4, Claude, Multimodal' },
-  { name: 'Agentic System Design', detail: 'Multi-Agent, Tool Use, Memory, MCP' },
+  { name: 'AI & LLM Integration', detail: 'Gemini, GPT-4, Claude, Prompt Engineering' },
+  { name: 'Agentic System Design', detail: 'Claude Code, MCP, Tool Use, Memory' },
+  { name: 'AI-Native Development', detail: 'Cursor, Claude Code, Building WITH Agents' },
   { name: 'Voice & Conversational AI', detail: 'Telephony, NLU, Real-Time Processing' },
   { name: 'Creative Engineering', detail: 'WebGL, Generative Art, Immersive UI' },
   { name: 'Platform & SaaS Architecture', detail: 'Auth, Billing, Multi-Tenant, Edge' },
