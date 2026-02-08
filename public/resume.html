@@ -253,6 +253,26 @@
 </head>
 <body>
 
+  <!-- Download Bar -->
+  <div class="no-print" style="background: rgba(245,166,35,0.06); border-bottom: 1px solid rgba(245,166,35,0.1); padding: 12px 0; text-align: center;">
+    <button onclick="window.print()" style="
+      background: none;
+      border: 1px solid rgba(245,166,35,0.3);
+      color: rgba(245,166,35,0.8);
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-weight: 700;
+      padding: 8px 24px;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all 0.3s;
+    " onmouseover="this.style.background='rgba(245,166,35,0.1)';this.style.color='#F5A623'" onmouseout="this.style.background='none';this.style.color='rgba(245,166,35,0.8)'">
+      &#8595; Download as PDF
+    </button>
+  </div>
+
   <!-- Header -->
   <div class="header-bar">
     <div class="container">
