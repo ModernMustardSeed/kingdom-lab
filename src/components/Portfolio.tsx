@@ -14,6 +14,17 @@ interface Project {
 
 const projects: Project[] = [
   {
+    id: 0,
+    title: "Modern Mustard Seed",
+    subtitle: "The Mission & The Machine",
+    description: "The flagship. Modern Mustard Seed is the studio, the brand, and the mission behind every product in this portfolio. Faith-driven AI engineering — building tools that serve people, scale businesses, and plant seeds that outlast the algorithm.",
+    skills: ["Next.js", "AI Engineering", "Brand Strategy", "Product Studio", "Full-Stack Platform"],
+    tags: ["Flagship", "Studio", "Mission"],
+    link: "https://modernmustardseed.com/",
+    category: "AI Products",
+    featured: true,
+  },
+  {
     id: 1,
     title: "Make Me Studio",
     subtitle: "10K Agency in a Box",
@@ -22,7 +33,6 @@ const projects: Project[] = [
     tags: ["AI Studio", "Content Creation", "SaaS"],
     link: "https://make-me-studio-v2.vercel.app/",
     category: "AI Products",
-    featured: true,
   },
   {
     id: 2,

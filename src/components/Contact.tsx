@@ -130,13 +130,28 @@ const Contact: React.FC = () => {
         </form>
 
         <div className="text-center mt-10 pt-8 border-t border-white/[0.03]">
-          <p className="text-white/20 text-[10px] font-mono tracking-wider mb-2">Or reach out directly</p>
-          <a
-            href="mailto:sarah@modernmustardseed.com"
-            className="text-amber-500/50 hover:text-amber-400 text-sm transition-colors font-serif italic"
-          >
-            sarah@modernmustardseed.com
-          </a>
+          <p className="text-white/20 text-[10px] font-mono tracking-wider mb-4">Or reach out directly</p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <a
+              href="mailto:sarah@modernmustardseed.com"
+              className="text-amber-500/50 hover:text-amber-400 text-sm transition-colors font-serif italic"
+            >
+              sarah@modernmustardseed.com
+            </a>
+
+            <span className="hidden sm:block text-white/10">|</span>
+
+            <a
+              href="tel:+14063121223"
+              className="group flex items-center gap-2.5 text-amber-500/50 hover:text-amber-400 text-sm transition-colors"
+            >
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+              </svg>
+              <span className="font-serif italic">Call my agent — (406) 312-1223</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
