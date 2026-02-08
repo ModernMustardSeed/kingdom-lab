@@ -96,6 +96,16 @@ const projects: Project[] = [
   },
   {
     id: 8,
+    title: "Ignition",
+    subtitle: "Idea-to-Income Agentic Swarm",
+    description: "A multi-agent AI system that takes a raw idea and autonomously builds the business plan, landing page, and go-to-market strategy. From spark to launch — orchestrated by agents, powered by AI.",
+    skills: ["Next.js 14", "Prisma", "Trigger.dev", "Gemini API", "Multi-Agent Systems"],
+    tags: ["Agentic AI", "Automation", "SaaS"],
+    link: "https://ignition-kappa.vercel.app/",
+    category: "AI Products",
+  },
+  {
+    id: 9,
     title: "Miracle Witness Network",
     subtitle: "Faith Community Platform",
     description: "A living testimony platform where miracles are witnessed, shared, and preserved. Connecting a global community through stories of faith that inspire and encourage.",

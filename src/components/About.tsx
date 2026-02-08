@@ -193,7 +193,7 @@ const About: React.FC = () => {
       {/* Stats Strip */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/[0.03] rounded-2xl overflow-hidden">
         {[
-          { value: '8', label: 'Products Live', sublabel: 'Solo — built & deployed' },
+          { value: '10', label: 'Products Live', sublabel: 'Solo — built & deployed' },
           { value: '4 Layers', label: 'Deep', sublabel: 'Frontend → Backend → AI → Agentic' },
           { value: 'Solo', label: 'Shipped', sublabel: 'Full product ownership' },
           { value: '0 → Prod', label: 'Velocity', sublabel: 'Idea to deployed product' },

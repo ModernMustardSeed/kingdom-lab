@@ -1,6 +1,7 @@
 import GoldStardust from './components/GoldStardust';
 import Portfolio from './components/Portfolio';
 import About from './components/About';
+import CurrentlyBuilding from './components/CurrentlyBuilding';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
@@ -33,6 +34,7 @@ const App: React.FC = () => {
         <main>
           <Portfolio />
           <About />
+          <CurrentlyBuilding />
           <Contact />
         </main>
 
