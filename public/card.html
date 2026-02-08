@@ -374,8 +374,31 @@
       level: 'M'
     });
 
+    // Pre-load photo as base64 for vCard embedding
+    let photoBase64 = '';
+    (function loadPhoto() {
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = function() {
+        const canvas = document.createElement('canvas');
+        // Resize to 300x300 for contact photo
+        canvas.width = 300;
+        canvas.height = 300;
+        const ctx = canvas.getContext('2d');
+        // Center-crop to square
+        const size = Math.min(img.width, img.height);
+        const sx = (img.width - size) / 2;
+        const sy = (img.height - size) / 2;
+        ctx.drawImage(img, sx, sy, size, size, 0, 0, 300, 300);
+        // Get JPEG base64 (smaller file size than PNG)
+        const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+        photoBase64 = dataUrl.split(',')[1];
+      };
+      img.src = '/sarah.png';
+    })();
+
     function downloadVCard() {
-      const vcard = [
+      const lines = [
         'BEGIN:VCARD',
         'VERSION:3.0',
         'N:Scarano;Sarah;;;',
@@ -392,9 +415,16 @@
         'X-SOCIALPROFILE;TYPE=github:https://github.com/ModernMustardSeed',
         'X-SOCIALPROFILE;TYPE=instagram:https://www.instagram.com/modernmustardseed/',
         'NOTE:Fullstack engineer & AI systems architect. 10 live products shipped solo. Founder of Modern Mustard Seed.',
-        'END:VCARD'
-      ].join('\r\n');
+      ];
 
+      // Add photo if loaded
+      if (photoBase64) {
+        lines.push('PHOTO;ENCODING=b;TYPE=JPEG:' + photoBase64);
+      }
+
+      lines.push('END:VCARD');
+
+      const vcard = lines.join('\r\n');
       const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
