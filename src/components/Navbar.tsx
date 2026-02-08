@@ -4,6 +4,7 @@ const navLinks: [string, string][] = [
   ['Projects', '#projects'],
   ['About', '#about'],
   ['Resume', '/resume.html'],
+  ['Card', '/card.html'],
   ['Contact', '#contact'],
 ];
 
