@@ -117,18 +117,16 @@ const About: React.FC = () => {
         <div className="lg:col-span-7 space-y-8">
           <p className="text-neutral-200 text-lg md:text-xl leading-9 font-serif font-light">
             I'm Sarah — founder of <span className="text-white font-medium">Modern Mustard Seed</span>.
-            I don't specialize in one layer and hand off the rest. I own the entire stack. The interface
-            your users fall in love with? I designed and built it. The database schema, the auth system,
-            the payment integration? I architected it. The AI that makes the product intelligent? I trained
-            it, prompted it, and deployed it.
+            I love building things that actually work — the whole thing, not just one slice. Frontend
+            that feels right, backend that holds up, AI that genuinely helps. I care about every layer
+            because users experience every layer, and the details matter.
           </p>
 
           <p className="text-neutral-400 text-base md:text-lg leading-8 font-light">
-            Most engineers choose a lane. I chose all of them — and I ship from every single one.
-            From enterprise voice AI that handles real phone calls, to AI creative studios generating
-            professional video with Veo and Imagen, to multi-agent systems that run entire business
-            operations autonomously. Every product in this portfolio is live, in production, and built
-            by one person. That's not a flex — it's a work ethic.
+            What drives me is solving real problems end-to-end. Voice AI that handles actual phone calls
+            for businesses. Creative tools that help people produce professional content with AI. Agentic
+            systems that take tedious operations off someone's plate. Every product here started with a
+            real need — and I stayed with it from first idea through production deployment.
           </p>
 
           <p className="text-neutral-400 text-base md:text-lg leading-8 font-light">
