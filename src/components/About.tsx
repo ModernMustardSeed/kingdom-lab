@@ -2,7 +2,7 @@ const stack = [
   {
     layer: 'Frontend',
     label: 'Pixel-Perfect Taste',
-    tools: 'React, Next.js 14/15, TypeScript, Tailwind, Framer Motion, p5.js, Three.js, WebGL, Cursor',
+    tools: 'React, Next.js 14/15, TypeScript, Tailwind, Framer Motion, p5.js, Three.js, WebGL',
     description: 'Interfaces that feel alive. The kind of frontend craft where every animation is intentional, every layout breathes, and users don\'t just navigate — they experience.',
   },
   {
@@ -29,7 +29,7 @@ const disciplines = [
   { name: 'Full-Stack Product Engineering', detail: 'Concept → Architecture → Ship' },
   { name: 'AI & LLM Integration', detail: 'Gemini, GPT-4, Claude, Prompt Engineering' },
   { name: 'Agentic System Design', detail: 'Claude Code, MCP, Tool Use, Memory' },
-  { name: 'AI-Native Development', detail: 'Cursor, Claude Code, Building WITH Agents' },
+  { name: 'AI-Native Development', detail: 'Claude Code, Antigravity, Google AI Studio' },
   { name: 'Voice & Conversational AI', detail: 'Telephony, NLU, Real-Time Processing' },
   { name: 'Creative Engineering', detail: 'WebGL, Generative Art, Immersive UI' },
   { name: 'Platform & SaaS Architecture', detail: 'Auth, Billing, Multi-Tenant, Edge' },
@@ -55,7 +55,7 @@ const About: React.FC = () => {
           <span className="text-gradient-gold">autonomous agent</span>.
         </h2>
         <p className="text-neutral-400 text-base md:text-lg font-light max-w-2xl mx-auto leading-relaxed">
-          Fullstack engineer. AI systems architect. AI-native builder. 10 live products shipped solo — from pixel-perfect frontends to production backends to autonomous agents. I build with Cursor and Claude Code, configure MCP infrastructure, and ship what others only prototype.
+          Fullstack engineer. AI systems architect. AI-native builder. 10 live products shipped solo — from pixel-perfect frontends to production backends to autonomous agents. I build with Claude Code, Antigravity, and Google AI Studio, configure MCP infrastructure, and ship what others only prototype.
         </p>
         <div className="w-16 h-px bg-gradient-to-r from-transparent via-amber-500/40 to-transparent mx-auto mt-10" />
       </div>
