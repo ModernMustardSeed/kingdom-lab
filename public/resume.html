@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sarah Scarano — Resume</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Syne', sans-serif;
+      background: #0a0a0a;
+      color: #e5e5e5;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    @media print {
+      body { background: white; color: #111; }
+      .no-print { display: none !important; }
+      .container { max-width: 100%; padding: 0; }
+      a { color: #111; text-decoration: none; }
+      .section { border-color: #ddd !important; }
+      .gold { color: #B8860B !important; }
+      .tag { border-color: #ccc !important; color: #555 !important; background: #f5f5f5 !important; }
+      h1, h2, h3 { color: #111 !important; }
+      .subtitle { color: #555 !important; }
+      .description { color: #333 !important; }
+      .meta { color: #777 !important; }
+      .header-bar { background: #111 !important; }
+      .header-bar * { color: white !important; }
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header */
+    .header-bar {
+      background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+      border-bottom: 1px solid rgba(245, 166, 35, 0.15);
+      padding: 48px 0 40px;
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: white;
+      margin-bottom: 6px;
+    }
+
+    .gold {
+      background: linear-gradient(135deg, #D4901A, #FFD966, #F5A623);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .headline {
+      font-size: 15px;
+      color: rgba(255,255,255,0.5);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      font-family: 'Space Mono', monospace;
+    }
+
+    .contact-row a {
+      color: rgba(245, 166, 35, 0.6);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .contact-row a:hover { color: #F5A623; }
+
+    /* Sections */
+    .section {
+      padding: 36px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .section:last-child { border-bottom: none; }
+
+    .section-label {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.35em;
+      color: rgba(245, 166, 35, 0.5);
+      font-family: 'Space Mono', monospace;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    /* Summary */
+    .summary {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      font-style: italic;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* Experience entries */
+    .entry {
+      margin-bottom: 28px;
+    }
+
+    .entry:last-child { margin-bottom: 0; }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 0.01em;
+    }
+
+    .meta {
+      font-size: 11px;
+      color: rgba(255,255,255,0.25);
+      font-family: 'Space Mono', monospace;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 8px;
+    }
+
+    .description {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.7;
+      font-weight: 400;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-family: 'Space Mono', monospace;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 100px;
+      border: 1px solid rgba(245, 166, 35, 0.12);
+      color: rgba(245, 166, 35, 0.5);
+      background: rgba(245, 166, 35, 0.03);
+    }
+
+    /* Skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 32px;
+    }
+
+    .skill-category h4 {
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 6px;
+    }
+
+    .skill-category p {
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
+      font-family: 'Space Mono', monospace;
+      line-height: 1.6;
+    }
+
+    /* Portfolio grid */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .portfolio-item {
+      padding: 12px 14px;
+      border: 1px solid rgba(255,255,255,0.04);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .portfolio-item h4 {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 2px;
+    }
+
+    .portfolio-item p {
+      font-size: 10px;
+      color: rgba(255,255,255,0.25);
+      font-family: 'Space Mono', monospace;
+    }
+
+    /* Back link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.3);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 40px 0;
+      transition: color 0.3s;
+    }
+
+    .back-link:hover { color: #F5A623; }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 28px; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .entry-header { flex-direction: column; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header-bar">
+    <div class="container">
+      <h1>Sarah <span class="gold">Scarano</span></h1>
+      <p class="headline">Fullstack Engineer &middot; AI Systems Architect &middot; Founder</p>
+      <div class="contact-row">
+        <span><a href="mailto:sarah@modernmustardseed.com">sarah@modernmustardseed.com</a></span>
+        <span>&middot;</span>
+        <span><a href="tel:+14063121223">(406) 312-1223</a></span>
+        <span>&middot;</span>
+        <span><a href="https://kingdom-lab.vercel.app">kingdom-lab.vercel.app</a></span>
+        <span>&middot;</span>
+        <span><a href="https://github.com/ModernMustardSeed">GitHub</a></span>
+        <span>&middot;</span>
+        <span><a href="https://www.linkedin.com/in/sarahmscarano/">LinkedIn</a></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- Summary -->
+    <div class="section">
+      <div class="section-label">Summary</div>
+      <p class="summary">
+        Fullstack engineer and AI systems architect with 10 live products shipped solo — from pixel-perfect
+        frontends to production backends to autonomous AI agents. Former VP of Sales with $3M+ in annual
+        revenue and 15+ years of business leadership. I bring the rare combination of deep technical
+        execution, product taste, and real-world business acumen. I don't just write code — I build
+        products that work, sell, and scale.
+      </p>
+    </div>
+
+    <!-- Technical Experience -->
+    <div class="section">
+      <div class="section-label">Engineering & Product — Modern Mustard Seed</div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <h3>Founder & Lead Engineer — Modern Mustard Seed</h3>
+          <span class="meta">2024 — Present</span>
+        </div>
+        <p class="subtitle">AI-powered product studio &middot; modernmustardseed.com</p>
+        <p class="description">
+          Founded and single-handedly built an entire portfolio of 10 production AI products. Full ownership
+          across the stack: frontend interfaces (React, Next.js 14/15, TypeScript, Tailwind, WebGL),
+          backend infrastructure (Supabase, Prisma, PostgreSQL, Stripe, Auth), AI systems (Gemini, GPT-4,
+          Claude, Veo, Imagen, Voice AI), and agentic orchestration (multi-agent systems, Trigger.dev, MCP,
+          tool use, memory). Every product is live, deployed, and handling real users.
+        </p>
+        <div class="tags">
+          <span class="tag">Next.js 14/15</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Supabase</span>
+          <span class="tag">Prisma</span>
+          <span class="tag">Gemini</span>
+          <span class="tag">Stripe</span>
+          <span class="tag">Multi-Agent AI</span>
+          <span class="tag">Voice AI</span>
+        </div>
+      </div>
+
+      <div class="entry" style="margin-top: 20px;">
+        <p class="description" style="color: rgba(255,255,255,0.3);">
+          <strong style="color: rgba(255,255,255,0.5);">Key products:</strong>
+          Make Me Studio (AI creative studio with Veo/Imagen) &middot;
+          Voice Staff (enterprise voice AI with telephony) &middot;
+          Ignition (multi-agent idea-to-income swarm) &middot;
+          Luxe Design (AI interior design) &middot;
+          UGC Studio (AI creative strategist) &middot;
+          Elite Opportunity Finder (AI lead discovery) &middot;
+          What Next (decision intelligence) &middot;
+          Cross Covenant (immersive faith tech) &middot;
+          Miracle Witness Network (community platform)
+        </p>
+      </div>
+    </div>
+
+    <!-- Business Experience -->
+    <div class="section">
+      <div class="section-label">Business Leadership</div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <h3>VP of Sales — Presidential Title Group</h3>
+          <span class="meta">Oct 2024 — Present</span>
+        </div>
+        <p class="description">
+          VP of Sales at the first AI-and-human collaborative title team in the country. Pioneering
+          next-gen real estate closings with AI-powered workflows that streamline the process for
+          smooth, efficient, and seamless transactions — while saving buyers thousands.
+        </p>
+        <div class="tags">
+          <span class="tag">AI + Human Collab</span>
+          <span class="tag">First in Country</span>
+          <span class="tag">Real Estate Tech</span>
+          <span class="tag">Sales Strategy</span>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <h3>Founder & Creative Director — Unify DeFi</h3>
+          <span class="meta">Apr 2019 — Oct 2024</span>
+        </div>
+        <p class="description">
+          Founded a boutique blockchain consulting firm, online merchandise store, and educational portal
+          with exclusive membership. Committed to mainstream adoption of blockchain, cryptocurrency, and
+          decentralized finance. Built community, education programs, and mass adoption strategies.
+        </p>
+        <div class="tags">
+          <span class="tag">Blockchain</span>
+          <span class="tag">DeFi</span>
+          <span class="tag">Community Building</span>
+          <span class="tag">Education</span>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <h3>Investor & Airbnb Host — Hello Sunshine Properties</h3>
+          <span class="meta">Mar 2019 — May 2023</span>
+        </div>
+        <p class="description">
+          Developed strategy and led a team of 5 to transform 26 of Jacksonville's most historic homes
+          into Airbnb rental properties. Handled client acquisition, negotiation, design, hosting, property
+          management, and crisis resolution. Achieved 96% occupancy rate and 4.9 overall rating. Thrived
+          during COVID.
+        </p>
+        <div class="tags">
+          <span class="tag">Real Estate</span>
+          <span class="tag">Team Leadership</span>
+          <span class="tag">96% Occupancy</span>
+          <span class="tag">4.9 Rating</span>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <h3>Creative Director — Salt & Light Outdoor</h3>
+          <span class="meta">Sep 2017 — Dec 2021</span>
+        </div>
+        <p class="description">
+          Creative Director and Product Designer building outdoor sanctuaries for families and communities
+          across 15 different states. Full creative ownership from concept to installed product.
+        </p>
+        <div class="tags">
+          <span class="tag">Product Design</span>
+          <span class="tag">15 States</span>
+          <span class="tag">Creative Direction</span>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <h3>Designer & Sales Manager — Paradise Grilling Systems</h3>
+          <span class="meta">Apr 2008 — Jun 2017</span>
+        </div>
+        <p class="description">
+          Designed and sold luxury outdoor kitchens ($5K–$50K) at home and garden shows nationwide.
+          Managed a team of 6. Personally sold over $3 million annually for 9 consecutive years.
+        </p>
+        <div class="tags">
+          <span class="tag">$3M+ Annual Sales</span>
+          <span class="tag">Luxury Goods</span>
+          <span class="tag">Team of 6</span>
+          <span class="tag">9 Years</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Technical Skills -->
+    <div class="section">
+      <div class="section-label">Technical Skills</div>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h4>Frontend</h4>
+          <p>React, Next.js 14/15, TypeScript, Tailwind CSS, Framer Motion, p5.js, Three.js, WebGL</p>
+        </div>
+        <div class="skill-category">
+          <h4>Backend</h4>
+          <p>Node.js, Supabase, Prisma, PostgreSQL, REST, tRPC, Stripe, Auth Systems, Edge Functions</p>
+        </div>
+        <div class="skill-category">
+          <h4>AI & LLM</h4>
+          <p>Gemini, GPT-4, Claude, Veo, Imagen, Voice AI, NLP, Computer Vision, RAG Pipelines</p>
+        </div>
+        <div class="skill-category">
+          <h4>Agentic Systems</h4>
+          <p>Multi-Agent Orchestration, Trigger.dev, Tool Use, Memory Systems, MCP, Workflow Automation</p>
+        </div>
+        <div class="skill-category">
+          <h4>Infrastructure</h4>
+          <p>Vercel, Railway, Git/GitHub, CI/CD, Vite, Turborepo</p>
+        </div>
+        <div class="skill-category">
+          <h4>Business</h4>
+          <p>Sales Strategy, Team Leadership, Client Acquisition, Product Design, Negotiation, Community Building</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+      <div class="section-label">Education</div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <h3>Florida State University</h3>
+          <span class="meta">2004 — 2007</span>
+        </div>
+        <p class="subtitle">International Affairs</p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <h3>Tallahassee State College</h3>
+          <span class="meta">2002 — 2004</span>
+        </div>
+        <p class="subtitle">Associate of Arts — International Relations and Affairs</p>
+      </div>
+    </div>
+
+    <!-- Back to portfolio -->
+    <a href="/" class="back-link no-print">
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+      </svg>
+      Back to Kingdom LAB
+    </a>
+
+  </div>
+
+</body>
+</html>

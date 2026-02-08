@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 const navLinks: [string, string][] = [
   ['Projects', '#projects'],
   ['About', '#about'],
+  ['Resume', '/resume.html'],
   ['Contact', '#contact'],
 ];
 
