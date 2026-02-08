@@ -36,26 +36,6 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: "Voice Staff",
-    subtitle: "Enterprise Voice Intelligence",
-    description: "Enterprise-grade AI voice assistants engineered for staffing and customer engagement. Scaling human connection through conversational AI that listens, learns, and responds with precision.",
-    skills: ["Voice Synthesis", "Conversational AI", "Real-Time Processing", "Telephony APIs", "HubSpot"],
-    tags: ["Voice AI", "Staffing", "Automation"],
-    link: "https://voicekitmodernmustardseedcom.vercel.app/",
-    category: "AI Products",
-  },
-  {
-    id: 3,
-    title: "Luxe Design",
-    subtitle: "AI Interior Design Engine",
-    description: "High-performance virtual staging and interior design powered by generative AI. Transform empty spaces into furnished masterpieces in seconds, not weeks.",
-    skills: ["Generative AI", "Image Processing", "Prompt Engineering", "Computer Vision", "UX Design"],
-    tags: ["Generative AI", "Interior Design", "Virtual Staging"],
-    link: "https://luxedesign-five.vercel.app/",
-    category: "AI Products",
-  },
-  {
-    id: 4,
     title: "UGC Studio",
     subtitle: "AI Creative Strategist",
     description: "An AI-powered creative strategist that transforms raw ideas into scroll-stopping UGC content. Built to think like a creative director and execute like a production team.",
@@ -65,7 +45,7 @@ const projects: Project[] = [
     category: "Creative Tech",
   },
   {
-    id: 5,
+    id: 3,
     title: "Elite Opportunity Finder",
     subtitle: "Lead & Opportunity Discovery",
     description: "An intelligent lead discovery engine that surfaces high-value opportunities from noise. AI-powered filtering and scoring to find the deals that actually matter.",
@@ -75,7 +55,7 @@ const projects: Project[] = [
     category: "Business Tools",
   },
   {
-    id: 6,
+    id: 4,
     title: "What Next",
     subtitle: "Decision Engine",
     description: "A decision intelligence platform that cuts through analysis paralysis. Input your context, constraints, and goals — and let AI map the clearest path forward.",
@@ -85,7 +65,7 @@ const projects: Project[] = [
     category: "Business Tools",
   },
   {
-    id: 7,
+    id: 5,
     title: "Cross Covenant",
     subtitle: "Ethereal UI Experience",
     description: "An immersive, ethereal web experience exploring the intersection of faith and technology. Where sacred narrative meets modern design in a transcendent digital space.",
@@ -95,7 +75,7 @@ const projects: Project[] = [
     category: "Faith Tech",
   },
   {
-    id: 8,
+    id: 6,
     title: "Ignition",
     subtitle: "Idea-to-Income Agentic Swarm",
     description: "A multi-agent AI system that takes a raw idea and autonomously builds the business plan, landing page, and go-to-market strategy. From spark to launch — orchestrated by agents, powered by AI.",
@@ -105,7 +85,7 @@ const projects: Project[] = [
     category: "AI Products",
   },
   {
-    id: 9,
+    id: 7,
     title: "Miracle Witness Network",
     subtitle: "Faith Community Platform",
     description: "A living testimony platform where miracles are witnessed, shared, and preserved. Connecting a global community through stories of faith that inspire and encourage.",
@@ -113,6 +93,26 @@ const projects: Project[] = [
     tags: ["Faith Tech", "Community", "Testimony"],
     link: "https://miracle-witness-network.vercel.app/",
     category: "Faith Tech",
+  },
+  {
+    id: 8,
+    title: "Voice Staff",
+    subtitle: "Enterprise Voice Intelligence",
+    description: "Enterprise-grade AI voice assistants engineered for staffing and customer engagement. Scaling human connection through conversational AI that listens, learns, and responds with precision.",
+    skills: ["Voice Synthesis", "Conversational AI", "Real-Time Processing", "Telephony APIs", "HubSpot"],
+    tags: ["Voice AI", "Staffing", "Automation"],
+    link: "https://voicekitmodernmustardseedcom.vercel.app/",
+    category: "AI Products",
+  },
+  {
+    id: 9,
+    title: "Luxe Design",
+    subtitle: "AI Interior Design Engine",
+    description: "High-performance virtual staging and interior design powered by generative AI. Transform empty spaces into furnished masterpieces in seconds, not weeks.",
+    skills: ["Generative AI", "Image Processing", "Prompt Engineering", "Computer Vision", "UX Design"],
+    tags: ["Generative AI", "Interior Design", "Virtual Staging"],
+    link: "https://luxedesign-five.vercel.app/",
+    category: "AI Products",
   },
 ];
 
