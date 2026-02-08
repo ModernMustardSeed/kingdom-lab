@@ -44,7 +44,7 @@ const About: React.FC = () => {
       </div>
 
       {/* Opening Statement */}
-      <div className="text-center max-w-4xl mx-auto mb-24 md:mb-32 bg-neutral-950/50 backdrop-blur-md rounded-3xl border border-white/[0.04] p-10 md:p-16 shadow-2xl">
+      <div className="text-center max-w-4xl mx-auto mb-16 md:mb-32 bg-neutral-950/50 backdrop-blur-md rounded-3xl border border-white/[0.04] p-6 sm:p-10 md:p-16 shadow-2xl">
         {/* Photo */}
         <div className="mb-10">
           <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden border-2 border-amber-500/20 shadow-[0_0_40px_rgba(245,166,35,0.08)]">
@@ -55,7 +55,7 @@ const About: React.FC = () => {
         <span className="text-[10px] uppercase tracking-[0.5em] text-amber-500 font-mono font-bold mb-8 block">
           Sarah Scarano
         </span>
-        <h2 className="font-serif italic text-4xl md:text-6xl lg:text-7xl text-white leading-[1.15] mb-10">
+        <h2 className="font-serif italic text-2xl sm:text-4xl md:text-6xl lg:text-7xl text-white leading-[1.15] mb-8 md:mb-10">
           I build <span className="text-gradient-gold">entire products</span> —{' '}
           <br className="hidden md:block" />
           from the pixel to the{' '}
@@ -114,7 +114,7 @@ const About: React.FC = () => {
       {/* Two-Column: Story + Disciplines */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 mb-28 md:mb-36">
         {/* Left Column — The Story */}
-        <div className="lg:col-span-7 space-y-8 bg-neutral-950/50 backdrop-blur-md rounded-2xl border border-white/[0.04] p-8 md:p-12 shadow-xl">
+        <div className="lg:col-span-7 space-y-6 md:space-y-8 bg-neutral-950/50 backdrop-blur-md rounded-2xl border border-white/[0.04] p-5 sm:p-8 md:p-12 shadow-xl">
           <p className="text-neutral-200 text-lg md:text-xl leading-9 font-serif font-light">
             I'm Sarah — founder of <span className="text-white font-medium">Modern Mustard Seed</span>.
             I love building things that actually work — the whole thing, not just one slice. Frontend
@@ -152,7 +152,7 @@ const About: React.FC = () => {
 
         {/* Right Column — Disciplines & Signal */}
         <div className="lg:col-span-5">
-          <div className="sticky top-32 bg-neutral-950/50 backdrop-blur-md rounded-2xl border border-white/[0.04] p-8 md:p-10 shadow-xl">
+          <div className="sticky top-32 bg-neutral-950/50 backdrop-blur-md rounded-2xl border border-white/[0.04] p-5 sm:p-8 md:p-10 shadow-xl">
             <span className="text-[9px] uppercase tracking-[0.4em] text-white/20 font-mono font-bold mb-6 block">
               Core Disciplines
             </span>
@@ -206,7 +206,7 @@ const About: React.FC = () => {
         ].map((stat) => (
           <div
             key={stat.label}
-            className="text-center p-8 md:p-10 bg-neutral-950/60 backdrop-blur-sm"
+            className="text-center p-5 sm:p-8 md:p-10 bg-neutral-950/60 backdrop-blur-sm"
           >
             <div className="text-2xl md:text-3xl font-sans font-extrabold text-gradient-gold mb-2">
               {stat.value}

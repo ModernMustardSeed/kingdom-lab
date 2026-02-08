@@ -129,14 +129,14 @@ const ProjectCard: React.FC<{ project: Project; className?: string }> = ({ proje
   return (
     <Wrapper
       {...wrapperProps}
-      className={`group relative block p-10 md:p-14 transition-all duration-500 hover:bg-white/[0.02] overflow-hidden ${
+      className={`group relative block p-6 sm:p-10 md:p-14 transition-all duration-500 hover:bg-white/[0.02] overflow-hidden ${
         isLive ? 'cursor-pointer' : 'cursor-default'
       } ${className}`}
     >
       {/* Hover ambient glow */}
       <div className="absolute top-0 right-0 -mr-40 -mt-40 w-96 h-96 rounded-full blur-[100px] bg-amber-500/10 opacity-0 group-hover:opacity-60 transition-opacity duration-1000 pointer-events-none" />
 
-      <div className="relative z-10 flex flex-col h-full min-h-[420px]">
+      <div className="relative z-10 flex flex-col h-full min-h-[360px] md:min-h-[420px]">
         {/* Top: Category + Issue marker */}
         <div className="flex items-center justify-between mb-8">
           <span className="text-[9px] uppercase tracking-[0.3em] text-amber-500/50 font-mono font-bold">
@@ -156,7 +156,7 @@ const ProjectCard: React.FC<{ project: Project; className?: string }> = ({ proje
 
         {/* Title Block */}
         <div className="mb-8">
-          <h3 className={`font-serif italic text-4xl md:text-5xl transition-colors duration-500 mb-2 leading-[1.1] ${
+          <h3 className={`font-serif italic text-3xl sm:text-4xl md:text-5xl transition-colors duration-500 mb-2 leading-[1.1] ${
             isLive ? 'text-white group-hover:text-amber-100' : 'text-white/70'
           }`}>
             {project.title}
@@ -251,21 +251,21 @@ const Portfolio: React.FC = () => {
   return (
     <section id="projects" className="w-full max-w-7xl mx-auto px-6 pt-28 pb-16 md:pt-36 md:pb-24">
       {/* Hero */}
-      <header className="mb-20 md:mb-28 text-center max-w-4xl mx-auto">
-        <div className="flex flex-col items-center gap-5 mb-20 bg-neutral-950/50 backdrop-blur-md p-8 md:p-14 rounded-2xl border border-white/[0.04] shadow-2xl mx-auto max-w-3xl">
+      <header className="mb-16 md:mb-28 text-center max-w-4xl mx-auto">
+        <div className="flex flex-col items-center gap-4 md:gap-5 mb-14 md:mb-20 bg-neutral-950/50 backdrop-blur-md p-6 md:p-14 rounded-2xl border border-white/[0.04] shadow-2xl mx-auto max-w-3xl">
           <span className="text-[10px] md:text-xs text-amber-500 font-bold tracking-[0.4em] uppercase font-mono drop-shadow-[0_0_8px_rgba(245,158,11,0.5)]">
             Matthew 6:33
           </span>
-          <p className="text-white font-serif italic text-xl md:text-3xl font-light tracking-wide opacity-90 max-w-2xl leading-relaxed">
+          <p className="text-white font-serif italic text-lg md:text-3xl font-light tracking-wide opacity-90 max-w-2xl leading-relaxed">
             "But seek first the kingdom of God and his righteousness, and all these things will be added to you."
           </p>
         </div>
 
-        <div className="bg-neutral-950/50 backdrop-blur-md rounded-2xl border border-white/[0.04] p-8 md:p-14 shadow-xl">
-          <div className="mb-8">
+        <div className="bg-neutral-950/50 backdrop-blur-md rounded-2xl border border-white/[0.04] p-6 md:p-14 shadow-xl">
+          <div className="mb-6 md:mb-8">
             <span className="text-[10px] tracking-[0.5em] uppercase text-amber-500/60 font-mono font-bold">Modern Mustard Seed Presents</span>
           </div>
-          <h1 className="font-sans text-6xl md:text-8xl font-extrabold tracking-tight text-white uppercase mb-4">
+          <h1 className="font-sans text-4xl sm:text-6xl md:text-8xl font-extrabold tracking-tight text-white uppercase mb-4">
             <span className="text-gradient-gold">Kingdom</span>{' '}
             <span className="font-extralight text-white/80">LAB</span>
           </h1>

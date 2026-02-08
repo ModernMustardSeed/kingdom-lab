@@ -40,12 +40,12 @@ const Contact: React.FC = () => {
         <div className="w-px h-24 bg-gradient-to-b from-transparent via-amber-500/30 to-transparent" />
       </div>
 
-      <div className="bg-neutral-950/50 backdrop-blur-md border border-white/[0.04] rounded-2xl p-10 md:p-16">
+      <div className="bg-neutral-950/50 backdrop-blur-md border border-white/[0.04] rounded-2xl p-6 sm:p-10 md:p-16">
         <div className="text-center mb-14">
           <span className="text-[10px] uppercase tracking-[0.4em] text-amber-500 font-mono font-bold mb-6 block">
             Let's Build
           </span>
-          <h2 className="font-serif italic text-3xl md:text-5xl text-white leading-tight mb-5">
+          <h2 className="font-serif italic text-2xl sm:text-3xl md:text-5xl text-white leading-tight mb-5">
             Big teams. Big problems.{' '}
             <br className="hidden md:block" />
             <span className="text-gradient-gold">Let's go.</span>
