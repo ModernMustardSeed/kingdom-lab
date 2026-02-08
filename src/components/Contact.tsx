@@ -2,15 +2,35 @@ import { useState } from 'react';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Kingdom LAB — ${formData.name}`);
-    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`);
-    window.open(`mailto:sarah@modernmustardseed.com?subject=${subject}&body=${body}`, '_self');
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
+    setStatus('sending');
+
+    try {
+      const res = await fetch('https://formspree.io/f/xgolerlj', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+
+      if (res.ok) {
+        setStatus('sent');
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setStatus('idle'), 5000);
+      } else {
+        setStatus('error');
+        setTimeout(() => setStatus('idle'), 4000);
+      }
+    } catch {
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 4000);
+    }
   };
 
   return (
@@ -83,15 +103,24 @@ const Contact: React.FC = () => {
           <div className="flex justify-center pt-4">
             <button
               type="submit"
-              disabled={submitted}
+              disabled={status === 'sending' || status === 'sent'}
               className={`group inline-flex items-center gap-3 px-10 py-4 border rounded-full transition-all duration-500 tracking-[0.2em] uppercase text-[10px] font-sans font-bold ${
-                submitted
+                status === 'sent'
                   ? 'border-green-500/40 bg-green-950/30 text-green-400'
-                  : 'border-white/10 hover:border-amber-500/40 bg-transparent hover:bg-amber-950/20 text-white/70 hover:text-white hover:shadow-[0_0_40px_rgba(251,191,36,0.06)]'
+                  : status === 'error'
+                    ? 'border-red-500/40 bg-red-950/30 text-red-400'
+                    : status === 'sending'
+                      ? 'border-amber-500/30 bg-amber-950/20 text-amber-400/70'
+                      : 'border-white/10 hover:border-amber-500/40 bg-transparent hover:bg-amber-950/20 text-white/70 hover:text-white hover:shadow-[0_0_40px_rgba(251,191,36,0.06)]'
               }`}
             >
-              <span>{submitted ? 'Opening email client...' : 'Start the Conversation'}</span>
-              {!submitted && (
+              <span>
+                {status === 'sending' ? 'Sending...' :
+                 status === 'sent' ? 'Message Sent' :
+                 status === 'error' ? 'Something went wrong — try again' :
+                 'Start the Conversation'}
+              </span>
+              {status === 'idle' && (
                 <svg className="w-3.5 h-3.5 text-amber-400 opacity-0 -ml-1 group-hover:opacity-100 group-hover:ml-0 transition-all duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
