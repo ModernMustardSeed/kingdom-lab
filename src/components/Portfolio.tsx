@@ -17,7 +17,7 @@ const projects: Project[] = [
     id: 0,
     title: "Modern Mustard Seed",
     subtitle: "The Mission & The Machine",
-    description: "The flagship. Modern Mustard Seed is the studio, the brand, and the mission behind every product in this portfolio. Faith-driven AI engineering — building tools that serve people, scale businesses, and plant seeds that outlast the algorithm.",
+    description: "The flagship. Modern Mustard Seed is the studio, the brand, and the mission behind every product in this portfolio. Faith-driven AI engineering, building tools that serve people, scale businesses, and plant seeds that outlast the algorithm.",
     skills: ["Next.js", "AI Engineering", "Brand Strategy", "Product Studio", "Full-Stack Platform"],
     tags: ["Flagship", "Studio", "Mission"],
     link: "https://modernmustardseed.com/",
@@ -28,7 +28,7 @@ const projects: Project[] = [
     id: 1,
     title: "Make Me Studio",
     subtitle: "10K Agency in a Box",
-    description: "A full-service AI creative studio that puts an entire agency at your fingertips. Generate professional video, imagery, and brand content powered by Gemini, Veo, and Imagen — from concept to delivery.",
+    description: "A full-service AI creative studio that puts an entire agency at your fingertips. Generate professional video, imagery, and brand content powered by Gemini, Veo, and Imagen, from concept to delivery.",
     skills: ["Next.js 15", "Supabase", "Stripe", "Gemini API", "Veo / Imagen"],
     tags: ["AI Studio", "Content Creation", "SaaS"],
     link: "https://make-me-studio-v2.vercel.app/",
@@ -58,7 +58,7 @@ const projects: Project[] = [
     id: 4,
     title: "What Next",
     subtitle: "Decision Engine",
-    description: "A decision intelligence platform that cuts through analysis paralysis. Input your context, constraints, and goals — and let AI map the clearest path forward.",
+    description: "A decision intelligence platform that cuts through analysis paralysis. Input your context, constraints, and goals, and let AI map the clearest path forward.",
     skills: ["Supabase", "Decision Trees", "AI Reasoning", "Data Modeling", "Responsive UI"],
     tags: ["Decision AI", "Productivity", "Intelligence"],
     link: "https://what-next-ruddy.vercel.app/",
@@ -78,7 +78,7 @@ const projects: Project[] = [
     id: 6,
     title: "Ignition",
     subtitle: "Idea-to-Income Agentic Swarm",
-    description: "A multi-agent AI system that takes a raw idea and autonomously builds the business plan, landing page, and go-to-market strategy. From spark to launch — orchestrated by agents, powered by AI.",
+    description: "A multi-agent AI system that takes a raw idea and autonomously builds the business plan, landing page, and go-to-market strategy. From spark to launch, orchestrated by agents, powered by AI.",
     skills: ["Next.js 14", "Prisma", "Trigger.dev", "Gemini API", "Multi-Agent Systems"],
     tags: ["Agentic AI", "Automation", "SaaS"],
     link: "https://ignition-kappa.vercel.app/",
@@ -252,7 +252,7 @@ const Portfolio: React.FC = () => {
     <section id="projects" className="w-full max-w-7xl mx-auto px-6 pt-28 pb-16 md:pt-36 md:pb-24">
       {/* Hero */}
       <header className="mb-16 md:mb-28 text-center max-w-4xl mx-auto">
-        <div className="flex flex-col items-center gap-4 md:gap-5 mb-14 md:mb-20 bg-neutral-950/50 backdrop-blur-md p-6 md:p-14 rounded-2xl border border-white/[0.04] shadow-2xl mx-auto max-w-3xl">
+        <div className="flex flex-col items-center gap-4 md:gap-5 mb-14 md:mb-20 bg-neutral-950/50 backdrop-blur-md px-5 py-6 sm:p-8 md:p-14 rounded-2xl border border-white/[0.04] shadow-2xl mx-auto max-w-3xl">
           <span className="text-[10px] md:text-xs text-amber-500 font-bold tracking-[0.4em] uppercase font-mono drop-shadow-[0_0_8px_rgba(245,158,11,0.5)]">
             Matthew 6:33
           </span>
@@ -261,17 +261,17 @@ const Portfolio: React.FC = () => {
           </p>
         </div>
 
-        <div className="bg-neutral-950/50 backdrop-blur-md rounded-2xl border border-white/[0.04] p-6 md:p-14 shadow-xl">
+        <div className="bg-neutral-950/50 backdrop-blur-md rounded-2xl border border-white/[0.04] px-5 py-6 sm:px-10 md:p-14 shadow-xl overflow-hidden">
           <div className="mb-6 md:mb-8">
             <span className="text-[10px] tracking-[0.5em] uppercase text-amber-500/60 font-mono font-bold">Modern Mustard Seed Presents</span>
           </div>
-          <h1 className="font-sans text-4xl sm:text-6xl md:text-8xl font-extrabold tracking-tight text-white uppercase mb-4">
+          <h1 className="font-sans text-[2rem] sm:text-6xl md:text-8xl font-extrabold tracking-tight text-white uppercase mb-4 text-center">
             <span className="text-gradient-gold">Kingdom</span>{' '}
             <span className="font-extralight text-white/80">LAB</span>
           </h1>
           <div className="w-24 h-px bg-gradient-to-r from-transparent via-amber-500/40 to-transparent mx-auto mb-6" />
           <p className="text-white/35 text-sm md:text-base font-light tracking-wider max-w-2xl mx-auto leading-relaxed">
-            A curated portfolio of AI-powered products, immersive experiences, and business systems — each one built with faith, precision, and the audacity to ship what others only dream about.
+            A curated portfolio of AI-powered products, immersive experiences, and business systems, each one built with faith, precision, and the audacity to ship what others only dream about.
           </p>
         </div>
       </header>

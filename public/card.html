@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sarah Scarano — Digital Card</title>
+  <title>Sarah Scarano | Digital Card</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -347,8 +347,18 @@
 
     <div class="divider"></div>
 
+    <!-- Book a Call -->
+    <div class="save-section" style="padding-bottom: 12px;">
+      <a href="https://calendar.app.google/wAimXyFxervR8zEm8" target="_blank" rel="noopener noreferrer" class="save-btn" style="text-decoration: none;">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width:18px;height:18px">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+        </svg>
+        Book a Call
+      </a>
+    </div>
+
     <!-- Save Contact Button -->
-    <div class="save-section">
+    <div class="save-section" style="padding-top: 0;">
       <button class="save-btn" onclick="downloadVCard()">
         <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
@@ -376,29 +386,57 @@
 
     // Pre-load photo as base64 for vCard embedding
     let photoBase64 = '';
+    let photoLoaded = false;
     (function loadPhoto() {
       const img = new Image();
-      img.crossOrigin = 'anonymous';
       img.onload = function() {
         const canvas = document.createElement('canvas');
-        // Resize to 300x300 for contact photo
         canvas.width = 300;
         canvas.height = 300;
         const ctx = canvas.getContext('2d');
-        // Center-crop to square
         const size = Math.min(img.width, img.height);
         const sx = (img.width - size) / 2;
         const sy = (img.height - size) / 2;
         ctx.drawImage(img, sx, sy, size, size, 0, 0, 300, 300);
-        // Get JPEG base64 (smaller file size than PNG)
-        const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+        const dataUrl = canvas.toDataURL('image/jpeg', 0.8);
         photoBase64 = dataUrl.split(',')[1];
+        photoLoaded = true;
       };
+      img.onerror = function() { photoLoaded = true; };
       img.src = '/sarah.png';
     })();
 
+    // Fold a long vCard line at 75 chars (RFC 2426 line folding)
+    function foldLine(line) {
+      if (line.length <= 75) return line;
+      var result = line.substring(0, 75);
+      var i = 75;
+      while (i < line.length) {
+        result += '\r\n ' + line.substring(i, i + 74);
+        i += 74;
+      }
+      return result;
+    }
+
     function downloadVCard() {
-      const lines = [
+      // If photo still loading, wait for it
+      if (!photoLoaded) {
+        var btn = document.querySelector('.save-btn');
+        btn.textContent = 'Loading photo...';
+        var check = setInterval(function() {
+          if (photoLoaded) {
+            clearInterval(check);
+            btn.innerHTML = '<svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width:18px;height:18px"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg> Save Contact';
+            doDownload();
+          }
+        }, 100);
+        return;
+      }
+      doDownload();
+    }
+
+    function doDownload() {
+      var lines = [
         'BEGIN:VCARD',
         'VERSION:3.0',
         'N:Scarano;Sarah;;;',
@@ -417,23 +455,29 @@
         'NOTE:Fullstack engineer & AI systems architect. 10 live products shipped solo. Founder of Modern Mustard Seed.',
       ];
 
-      // Add photo if loaded
+      // Add photo with proper line folding for iOS compatibility
       if (photoBase64) {
-        lines.push('PHOTO;ENCODING=b;TYPE=JPEG:' + photoBase64);
+        lines.push(foldLine('PHOTO;ENCODING=b;TYPE=JPEG:' + photoBase64));
       }
 
       lines.push('END:VCARD');
 
-      const vcard = lines.join('\r\n');
-      const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'Sarah-Scarano.vcf';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
+      var vcard = lines.join('\r\n');
+      var blob = new Blob([vcard], { type: 'text/vcard' });
+      var url = URL.createObjectURL(blob);
+
+      // iOS Safari compatible download
+      if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        window.location.href = url;
+      } else {
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'Sarah-Scarano.vcf';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
     }
   </script>
 

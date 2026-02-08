@@ -3,25 +3,25 @@ const stack = [
     layer: 'Frontend',
     label: 'Pixel-Perfect Taste',
     tools: 'React, Next.js 14/15, TypeScript, Tailwind, Framer Motion, p5.js, Three.js, WebGL',
-    description: 'Interfaces that feel alive. The kind of frontend craft where every animation is intentional, every layout breathes, and users don\'t just navigate — they experience.',
+    description: 'Interfaces that feel alive. The kind of frontend craft where every animation is intentional, every layout breathes, and users don\'t just navigate. They experience.',
   },
   {
     layer: 'Backend',
     label: 'Production Architecture',
     tools: 'Node.js, Supabase, Prisma, PostgreSQL, REST / tRPC, Stripe, Auth Systems, Edge Functions, Serverless, Railway',
-    description: 'Databases that scale. APIs that don\'t break. Payment systems, auth flows, and real-time infrastructure — engineered for production from day one, not day ninety.',
+    description: 'Databases that scale. APIs that don\'t break. Payment systems, auth flows, and real-time infrastructure engineered for production from day one, not day ninety.',
   },
   {
     layer: 'AI Systems',
     label: 'Intelligence Layer',
     tools: 'Gemini, GPT-4, Claude, Veo, Imagen, Voice AI, NLP, Computer Vision, RAG Pipelines, Prompt Engineering',
-    description: 'Not just calling APIs — building systems that reason, generate, and adapt. From AI video production to voice agents handling live phone calls to intelligent content engines.',
+    description: 'Not just calling APIs. Building systems that reason, generate, and adapt. From AI video production to voice agents handling live phone calls to intelligent content engines.',
   },
   {
     layer: 'Agentic',
     label: 'Autonomous Orchestration',
     tools: 'Multi-Agent Systems, Trigger.dev, Claude Code, MCP Protocol, Tool Use, Memory Systems, Knowledge Graphs, Event-Driven Architecture',
-    description: 'The frontier. AI agents that don\'t just respond — they plan, execute, and iterate autonomously. CRM agents that close deals. Creative agents that produce campaigns. Operations that run themselves.',
+    description: 'The frontier. AI agents that don\'t just respond. They plan, execute, and iterate autonomously. CRM agents that close deals. Creative agents that produce campaigns. Operations that run themselves.',
   },
 ];
 
@@ -56,13 +56,13 @@ const About: React.FC = () => {
           Sarah Scarano
         </span>
         <h2 className="font-serif italic text-2xl sm:text-4xl md:text-6xl lg:text-7xl text-white leading-[1.15] mb-8 md:mb-10">
-          I build <span className="text-gradient-gold">entire products</span> —{' '}
+          I build <span className="text-gradient-gold">entire products</span>.{' '}
           <br className="hidden md:block" />
           from the pixel to the{' '}
           <span className="text-gradient-gold">autonomous agent</span>.
         </h2>
         <p className="text-neutral-400 text-base md:text-lg font-light max-w-2xl mx-auto leading-relaxed">
-          Fullstack engineer. AI systems architect. AI-native builder. 10 live products shipped solo — from pixel-perfect frontends to production backends to autonomous agents. I build with Claude Code, Antigravity, and Google AI Studio, configure MCP infrastructure, and ship what others only prototype.
+          Fullstack engineer. AI systems architect. AI-native builder. 10 live products shipped solo, from pixel-perfect frontends to production backends to autonomous agents. I build with Claude Code, Antigravity, and Google AI Studio, configure MCP infrastructure, and ship what others only prototype.
         </p>
         <div className="w-16 h-px bg-gradient-to-r from-transparent via-amber-500/40 to-transparent mx-auto mt-10" />
       </div>
@@ -85,7 +85,7 @@ const About: React.FC = () => {
 
               <div className="flex items-baseline justify-between mb-4">
                 <span className="text-[9px] uppercase tracking-[0.3em] text-amber-500/60 font-mono font-bold">
-                  {String(i + 1).padStart(2, '0')} — {s.layer}
+                  {String(i + 1).padStart(2, '0')} / {s.layer}
                 </span>
                 <span className="text-[9px] uppercase tracking-[0.2em] text-white/15 font-mono">
                   {s.label}
@@ -116,8 +116,8 @@ const About: React.FC = () => {
         {/* Left Column — The Story */}
         <div className="lg:col-span-7 space-y-6 md:space-y-8 bg-neutral-950/50 backdrop-blur-md rounded-2xl border border-white/[0.04] p-5 sm:p-8 md:p-12 shadow-xl">
           <p className="text-neutral-200 text-lg md:text-xl leading-9 font-serif font-light">
-            I'm Sarah — founder of <span className="text-white font-medium">Modern Mustard Seed</span>.
-            I love building things that actually work — the whole thing, not just one slice. Frontend
+            I'm Sarah, founder of <span className="text-white font-medium">Modern Mustard Seed</span>.
+            I love building things that actually work. The whole thing, not just one slice. Frontend
             that feels right, backend that holds up, AI that genuinely helps. I care about every layer
             because users experience every layer, and the details matter.
           </p>
@@ -126,7 +126,7 @@ const About: React.FC = () => {
             What drives me is solving real problems end-to-end. Voice AI that handles actual phone calls
             for businesses. Creative tools that help people produce professional content with AI. Agentic
             systems that take tedious operations off someone's plate. Every product here started with a
-            real need — and I stayed with it from first idea through production deployment.
+            real need, and I stayed with it from first idea through production deployment.
           </p>
 
           <p className="text-neutral-400 text-base md:text-lg leading-8 font-light">
@@ -134,7 +134,7 @@ const About: React.FC = () => {
             <em className="text-amber-200/80 not-italic font-medium">rigor</em> at the backend, and{' '}
             <em className="text-amber-200/80 not-italic font-medium">vision</em> at the AI layer. I think in
             systems, I design for humans, and I engineer for scale. When you bring me onto a team, you're not
-            filling a role — you're adding a force multiplier who can operate anywhere in the stack and ship
+            filling a role. You're adding a force multiplier who can operate anywhere in the stack and ship
             production-grade work at every layer.
           </p>
 
@@ -187,7 +187,7 @@ const About: React.FC = () => {
                 </span>
               </div>
               <p className="text-white/40 text-xs leading-5 font-light">
-                Looking for teams building at scale — AI products, complex platforms, and
+                Looking for teams building at scale: AI products, complex platforms, and
                 ambitious technical challenges. If you're doing big things and need a fullstack
                 engineer who can own the entire surface area, let's talk.
               </p>
@@ -199,7 +199,7 @@ const About: React.FC = () => {
       {/* Stats Strip */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/[0.03] rounded-2xl overflow-hidden">
         {[
-          { value: '10', label: 'Products Live', sublabel: 'Solo — built & deployed' },
+          { value: '10', label: 'Products Live', sublabel: 'Solo. Built & deployed' },
           { value: '4 Layers', label: 'Deep', sublabel: 'Frontend → Backend → AI → Agentic' },
           { value: 'Solo', label: 'Shipped', sublabel: 'Full product ownership' },
           { value: '0 → Prod', label: 'Velocity', sublabel: 'Idea to deployed product' },

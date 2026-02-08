@@ -1,19 +1,19 @@
 const activeProjects = [
   {
     name: 'Ignition',
-    description: 'Idea-to-Income Agentic Swarm — a multi-agent system that takes a raw idea and autonomously builds the business plan, landing page, and go-to-market strategy.',
+    description: 'Idea-to-Income Agentic Swarm. A multi-agent system that takes a raw idea and autonomously builds the business plan, landing page, and go-to-market strategy.',
     tech: 'Next.js 14, Prisma, Trigger.dev, Gemini',
     status: 'In Development',
   },
   {
     name: 'Wild Daisy Command Center',
-    description: 'Agentic operations hub — a centralized dashboard for orchestrating AI agents across all Modern Mustard Seed products, with scheduled tasks and real-time monitoring.',
+    description: 'Agentic operations hub. A centralized dashboard for orchestrating AI agents across all Modern Mustard Seed products, with scheduled tasks and real-time monitoring.',
     tech: 'Next.js 16, Trigger.dev, Multi-Agent',
     status: 'In Development',
   },
   {
     name: 'Video Pipeline',
-    description: 'Evaluating Higgsfield and VideoGen APIs for an automated AI video production pipeline — from script to rendered video with zero manual editing.',
+    description: 'Evaluating Higgsfield and VideoGen APIs for an automated AI video production pipeline. From script to rendered video with zero manual editing.',
     tech: 'Video AI APIs, Automation',
     status: 'Research',
   },
