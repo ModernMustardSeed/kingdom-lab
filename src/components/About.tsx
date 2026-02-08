@@ -45,6 +45,13 @@ const About: React.FC = () => {
 
       {/* Opening Statement */}
       <div className="text-center max-w-4xl mx-auto mb-24 md:mb-32">
+        {/* Photo */}
+        <div className="mb-10">
+          <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden border-2 border-amber-500/20 shadow-[0_0_40px_rgba(245,166,35,0.08)]">
+            <img src="/sarah.png" alt="Sarah Scarano" className="w-full h-full object-cover" />
+          </div>
+        </div>
+
         <span className="text-[10px] uppercase tracking-[0.5em] text-amber-500 font-mono font-bold mb-8 block">
           Sarah Scarano
         </span>
