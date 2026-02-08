@@ -27,7 +27,7 @@ const CurrentlyBuilding: React.FC = () => {
         <div className="w-px h-20 bg-gradient-to-b from-transparent via-amber-500/30 to-transparent" />
       </div>
 
-      <div className="text-center mb-12">
+      <div className="text-center mb-12 bg-neutral-950/50 backdrop-blur-md rounded-2xl border border-white/[0.04] p-8 md:p-10 shadow-xl max-w-xl mx-auto">
         <span className="text-[10px] uppercase tracking-[0.5em] text-amber-500 font-mono font-bold mb-4 block">
           What I'm Building Now
         </span>

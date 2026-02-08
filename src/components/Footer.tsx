@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="w-full max-w-5xl mx-auto px-6 pt-20 pb-12">
       {/* Scripture */}
-      <div className="text-center mb-16 max-w-2xl mx-auto">
+      <div className="text-center mb-16 max-w-2xl mx-auto bg-neutral-950/50 backdrop-blur-md rounded-2xl border border-white/[0.04] p-8 md:p-12 shadow-xl">
         <p className="text-neutral-200 font-serif italic text-xl md:text-3xl mb-5 leading-relaxed">
           "Commit to the Lord whatever you do, and he will establish your plans."
         </p>

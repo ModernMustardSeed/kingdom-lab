@@ -261,17 +261,19 @@ const Portfolio: React.FC = () => {
           </p>
         </div>
 
-        <div className="mb-8">
-          <span className="text-[10px] tracking-[0.5em] uppercase text-amber-500/60 font-mono font-bold">Modern Mustard Seed Presents</span>
+        <div className="bg-neutral-950/50 backdrop-blur-md rounded-2xl border border-white/[0.04] p-8 md:p-14 shadow-xl">
+          <div className="mb-8">
+            <span className="text-[10px] tracking-[0.5em] uppercase text-amber-500/60 font-mono font-bold">Modern Mustard Seed Presents</span>
+          </div>
+          <h1 className="font-sans text-6xl md:text-8xl font-extrabold tracking-tight text-white uppercase mb-4">
+            <span className="text-gradient-gold">Kingdom</span>{' '}
+            <span className="font-extralight text-white/80">LAB</span>
+          </h1>
+          <div className="w-24 h-px bg-gradient-to-r from-transparent via-amber-500/40 to-transparent mx-auto mb-6" />
+          <p className="text-white/35 text-sm md:text-base font-light tracking-wider max-w-2xl mx-auto leading-relaxed">
+            A curated portfolio of AI-powered products, immersive experiences, and business systems — each one built with faith, precision, and the audacity to ship what others only dream about.
+          </p>
         </div>
-        <h1 className="font-sans text-6xl md:text-8xl font-extrabold tracking-tight text-white uppercase mb-4">
-          <span className="text-gradient-gold">Kingdom</span>{' '}
-          <span className="font-extralight text-white/80">LAB</span>
-        </h1>
-        <div className="w-24 h-px bg-gradient-to-r from-transparent via-amber-500/40 to-transparent mx-auto mb-6" />
-        <p className="text-white/35 text-sm md:text-base font-light tracking-wider max-w-2xl mx-auto leading-relaxed">
-          A curated portfolio of AI-powered products, immersive experiences, and business systems — each one built with faith, precision, and the audacity to ship what others only dream about.
-        </p>
       </header>
 
       {/* Filter Tabs */}
