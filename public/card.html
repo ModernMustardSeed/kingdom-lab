@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -24,42 +25,42 @@
 
     .card {
       width: 100%;
-      max-width: 400px;
-      background: linear-gradient(145deg, #111, #0d0d0d);
-      border: 1px solid rgba(245, 166, 35, 0.1);
-      border-radius: 24px;
+      max-width: 420px;
+      background: linear-gradient(145deg, #141414, #0d0d0d);
+      border: 1px solid rgba(245, 166, 35, 0.15);
+      border-radius: 28px;
       overflow: hidden;
-      box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 60px rgba(245,166,35,0.03);
+      box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 80px rgba(245,166,35,0.04);
     }
 
     /* Top accent */
     .card-accent {
-      height: 3px;
+      height: 4px;
       background: linear-gradient(90deg, transparent, #D4901A, #FFD966, #D4901A, transparent);
     }
 
     /* Photo + Identity */
     .card-header {
       text-align: center;
-      padding: 40px 32px 24px;
+      padding: 44px 32px 28px;
     }
 
     .photo {
-      width: 120px;
-      height: 120px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid rgba(245, 166, 35, 0.2);
-      margin-bottom: 20px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      border: 3px solid rgba(245, 166, 35, 0.25);
+      margin-bottom: 22px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 20px rgba(245,166,35,0.06);
     }
 
     .name {
-      font-size: 28px;
+      font-size: 34px;
       font-weight: 800;
       letter-spacing: 0.01em;
       color: white;
-      margin-bottom: 4px;
+      margin-bottom: 8px;
     }
 
     .gold {
@@ -70,23 +71,24 @@
     }
 
     .title {
-      font-size: 12px;
-      color: rgba(255,255,255,0.4);
-      letter-spacing: 0.05em;
-      margin-bottom: 4px;
+      font-size: 15px;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.04em;
+      font-weight: 500;
+      margin-bottom: 6px;
     }
 
     .org {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      font-size: 16px;
-      color: rgba(245, 166, 35, 0.6);
+      font-size: 20px;
+      color: rgba(245, 166, 35, 0.75);
     }
 
     /* Divider */
     .divider {
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
       margin: 0 32px;
     }
 
@@ -101,110 +103,148 @@
     .contact-link {
       display: flex;
       align-items: center;
-      gap: 14px;
-      padding: 12px 0;
+      gap: 16px;
+      padding: 14px 0;
       text-decoration: none;
-      color: rgba(255,255,255,0.6);
-      font-size: 13px;
+      color: rgba(255,255,255,0.85);
+      font-size: 15px;
+      font-weight: 500;
       transition: all 0.3s;
-      border-bottom: 1px solid rgba(255,255,255,0.03);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
     }
 
     .contact-link:last-child { border-bottom: none; }
     .contact-link:hover { color: #F5A623; }
 
     .contact-link svg {
-      width: 18px;
-      height: 18px;
+      width: 22px;
+      height: 22px;
       flex-shrink: 0;
-      color: rgba(245, 166, 35, 0.4);
+      color: rgba(245, 166, 35, 0.6);
     }
 
     .contact-link:hover svg { color: #F5A623; }
 
     .contact-label {
-      font-size: 9px;
+      font-size: 10px;
       text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.25em;
+      color: rgba(255,255,255,0.35);
       font-family: 'Space Mono', monospace;
       font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .contact-value {
+      font-size: 15px;
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
     }
 
     /* Social Row */
     .social-row {
       display: flex;
       justify-content: center;
-      gap: 12px;
-      padding: 16px 32px;
+      gap: 14px;
+      padding: 20px 32px;
     }
 
     .social-btn {
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.06);
-      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.04);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.45);
       text-decoration: none;
       transition: all 0.3s;
     }
 
     .social-btn:hover {
       color: #F5A623;
-      border-color: rgba(245, 166, 35, 0.3);
-      background: rgba(245, 166, 35, 0.05);
+      border-color: rgba(245, 166, 35, 0.35);
+      background: rgba(245, 166, 35, 0.08);
     }
 
-    .social-btn svg { width: 16px; height: 16px; }
+    .social-btn svg { width: 18px; height: 18px; }
+
+    /* QR Code Section */
+    .qr-section {
+      text-align: center;
+      padding: 8px 32px 20px;
+    }
+
+    .qr-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: rgba(255,255,255,0.3);
+      font-family: 'Space Mono', monospace;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .qr-wrapper {
+      display: inline-block;
+      padding: 14px;
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .qr-wrapper canvas {
+      display: block;
+      width: 160px !important;
+      height: 160px !important;
+    }
 
     /* Save Button */
     .save-section {
-      padding: 8px 32px 32px;
+      padding: 12px 32px 32px;
     }
 
     .save-btn {
       width: 100%;
-      padding: 16px;
-      border: 1px solid rgba(245, 166, 35, 0.25);
-      border-radius: 14px;
-      background: rgba(245, 166, 35, 0.05);
+      padding: 18px;
+      border: 1px solid rgba(245, 166, 35, 0.35);
+      border-radius: 16px;
+      background: rgba(245, 166, 35, 0.08);
       color: #F5A623;
-      font-family: 'Space Mono', monospace;
-      font-size: 11px;
+      font-family: 'Syne', sans-serif;
+      font-size: 14px;
       text-transform: uppercase;
-      letter-spacing: 0.25em;
+      letter-spacing: 0.2em;
       font-weight: 700;
       cursor: pointer;
       transition: all 0.3s;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     .save-btn:hover {
-      background: rgba(245, 166, 35, 0.12);
-      border-color: rgba(245, 166, 35, 0.4);
-      box-shadow: 0 0 30px rgba(245, 166, 35, 0.08);
+      background: rgba(245, 166, 35, 0.15);
+      border-color: rgba(245, 166, 35, 0.5);
+      box-shadow: 0 0 40px rgba(245, 166, 35, 0.1);
     }
 
-    .save-btn svg { width: 16px; height: 16px; }
+    .save-btn svg { width: 18px; height: 18px; }
 
     /* Portfolio link */
     .portfolio-link {
       text-align: center;
-      padding: 0 32px 28px;
+      padding: 0 32px 32px;
     }
 
     .portfolio-link a {
-      font-size: 10px;
+      font-size: 13px;
       text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.35);
       text-decoration: none;
       font-weight: 600;
       transition: color 0.3s;
@@ -236,7 +276,7 @@
         </svg>
         <div>
           <div class="contact-label">Email</div>
-          sarah@modernmustardseed.com
+          <div class="contact-value">sarah@modernmustardseed.com</div>
         </div>
       </a>
 
@@ -246,7 +286,7 @@
         </svg>
         <div>
           <div class="contact-label">Agent</div>
-          (406) 312-1223
+          <div class="contact-value">(406) 312-1223</div>
         </div>
       </a>
 
@@ -256,7 +296,7 @@
         </svg>
         <div>
           <div class="contact-label">Direct</div>
-          (448) 200-8433
+          <div class="contact-value">(448) 200-8433</div>
         </div>
       </a>
 
@@ -266,7 +306,7 @@
         </svg>
         <div>
           <div class="contact-label">Website</div>
-          modernmustardseed.com
+          <div class="contact-value">modernmustardseed.com</div>
         </div>
       </a>
     </div>
@@ -297,6 +337,16 @@
 
     <div class="divider"></div>
 
+    <!-- QR Code -->
+    <div class="qr-section">
+      <div class="qr-label">Scan to Connect</div>
+      <div class="qr-wrapper">
+        <canvas id="qrcode"></canvas>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
     <!-- Save Contact Button -->
     <div class="save-section">
       <button class="save-btn" onclick="downloadVCard()">
@@ -314,6 +364,16 @@
   </div>
 
   <script>
+    // Generate QR code
+    QRCode.toCanvas(document.getElementById('qrcode'), 'https://kingdom-lab.vercel.app/card.html', {
+      width: 160,
+      margin: 0,
+      color: {
+        dark: '#000000',
+        light: '#ffffff'
+      }
+    });
+
     function downloadVCard() {
       const vcard = [
         'BEGIN:VCARD',
