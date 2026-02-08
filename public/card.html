@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -364,14 +364,14 @@
   </div>
 
   <script>
-    // Generate QR code
-    QRCode.toCanvas(document.getElementById('qrcode'), 'https://kingdom-lab.vercel.app/card.html', {
-      width: 160,
-      margin: 0,
-      color: {
-        dark: '#000000',
-        light: '#ffffff'
-      }
+    // Generate QR code — links to this card page so people can save contact
+    new QRious({
+      element: document.getElementById('qrcode'),
+      value: 'https://kingdom-lab.vercel.app/card.html',
+      size: 320,
+      foreground: '#000000',
+      background: '#ffffff',
+      level: 'M'
     });
 
     function downloadVCard() {
