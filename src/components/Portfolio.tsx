@@ -65,16 +65,6 @@ const projects: Project[] = [
     category: "Business Tools",
   },
   {
-    id: 5,
-    title: "Cross Covenant",
-    subtitle: "Ethereal UI Experience",
-    description: "An immersive, ethereal web experience exploring the intersection of faith and technology. Where sacred narrative meets modern design in a transcendent digital space.",
-    skills: ["Next.js", "Creative Coding", "Animation Design", "Immersive UI", "Storytelling"],
-    tags: ["Faith Tech", "Immersive", "Creative"],
-    link: "https://cross-covenant-mnep253ut-sarah-7990s-projects.vercel.app/",
-    category: "Faith Tech",
-  },
-  {
     id: 6,
     title: "Ignition",
     subtitle: "Idea-to-Income Agentic Swarm",
@@ -101,7 +91,7 @@ const projects: Project[] = [
     description: "Enterprise-grade AI voice assistants engineered for staffing and customer engagement. Scaling human connection through conversational AI that listens, learns, and responds with precision.",
     skills: ["Voice Synthesis", "Conversational AI", "Real-Time Processing", "Telephony APIs", "HubSpot"],
     tags: ["Voice AI", "Staffing", "Automation"],
-    link: "https://voicekitmodernmustardseedcom.vercel.app/",
+    link: "https://voicestaff.pro/",
     category: "AI Products",
   },
   {
